@@ -1,13 +1,13 @@
-<?php 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login taller atlas</title>
+</head>
+<body>
+    
+</body>
+</html>
 
-echo "prueba";
-echo "gustavo";
-echo "mujica";
-echo "actualizacion desde vs code";
 
-echo " prueba de actualizar github desdevs code";
-
-echo "prueba de actualizacion desde casa";
-
-
-?>
