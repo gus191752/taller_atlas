@@ -7,6 +7,7 @@ echo "actualizacion desde vs code";
 
 echo " prueba de actualizar github desdevs code";
 
+echo "prueba de actualizacion desde casa";
 
 
 ?>
