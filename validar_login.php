@@ -13,7 +13,7 @@ $filas= mysqli_num_rows($resultado_login);
 if ($filas)
 {
     header("location: mostrarconajax_trabajadores.php");
-    echo "validacion correcta";
+    echo "validacion correcta bienvenido";
 }
 else{
     echo "no se autentico la contraseña";
