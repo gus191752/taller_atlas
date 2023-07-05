@@ -12,7 +12,7 @@ $filas= mysqli_num_rows($resultado_login);
 
 if ($filas)
 {
-    header("location: mostrarconajax_trabajadores.php");
+    header("location: home_validado.html");
     echo "validacion correcta bienvenido";
 }
 else{
