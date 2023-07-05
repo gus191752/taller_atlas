@@ -17,7 +17,7 @@ if ($filas)
 }
 else{
     echo "no se autentico la contraseña";
-    header("location: login.php");
+    header("location: home_no_valido.html ");
 }
 
 
