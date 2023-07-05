@@ -16,7 +16,7 @@ if ($filas)
     echo "validacion correcta";
 }
 else{
-    echo "no se autentico";
+    echo "no se autentico la contraseña";
     header("location: login.php");
 }
 
