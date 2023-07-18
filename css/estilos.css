@@ -42,14 +42,9 @@
   height: 100%;
   width: 100%;
 }
-#icono_ojo {
-  height: auto;
-  width: auto;
-  max-height: 50px;
-  max-width: 50px;
-  position: relative;
-}
-h1                     /*   titulo principal  */ {
+
+h1                     /*   titulo principal  */
+ {
   /*posicion*/
   /* box model*/
   /* texto*/
