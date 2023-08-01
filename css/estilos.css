@@ -63,10 +63,11 @@ h1                     /*   titulo principal  */
   font-size: 40px;
   
   /* visual*/
-  color: green;
+  color: #153358;
   /* otros*/
 }
-h2                    /*    titulo secundario  */ {
+h2                    /*    titulo secundario  */
+{
   /*posicion*/
   /* box model*/
   /* texto*/
@@ -74,7 +75,7 @@ h2                    /*    titulo secundario  */ {
   font-size: 30px;
 
   /* visual*/
-  color: green;
+  color: #153358;
   /* otros*/
 }
 h3                    /* titulo equipos especificos a la izquierda    */ {
@@ -82,10 +83,22 @@ h3                    /* titulo equipos especificos a la izquierda    */ {
   /* box model*/
   /* texto*/
   font-weight: bold;
-  font-size: 15px;
+  font-size: 40px;
 
   /* visual*/
-  color: green;
+  color: rgb(202, 183, 7);
+  /* otros*/
+}
+
+h4                    /* titulo equipos especificos a la izquierda    */ {
+  /*posicion*/
+  /* box model*/
+  /* texto*/
+  font-weight: bold;
+  font-size: 25px;
+
+  /* visual*/
+  color:  rgb(202, 183, 7);
   /* otros*/
 }
 
@@ -122,7 +135,7 @@ html {
 
 .footer {
   background-color: #112c50;
-    color: rgb(16, 224, 27);
+    color: rgb(241, 218, 9);
     height: auto;
     width: 100%;
     bottom: 0;
@@ -213,7 +226,7 @@ p1                       /*    letra negra a la izq */ {
   margin: 0 auto;
 }
 .contenedor-link {
-  color: rgb(16, 224, 27);
+  color:  rgb(241, 218, 9);
   text-decoration: none;
 }
 .logo {
@@ -350,5 +363,28 @@ p1                       /*    letra negra a la izq */ {
     height: 400px;
     width: 400px;
   }
+  h3                    /* titulo equipos especificos a la izquierda    */ {
+    /*posicion*/
+    /* box model*/
+    /* texto*/
+    font-weight: bold;
+    font-size: 20px;
+  
+    /* visual*/
+    color: rgb(202, 183, 7);
+    /* otros*/
+  }
+  h4                    /* titulo equipos especificos a la izquierda    */ {
+    /*posicion*/
+    /* box model*/
+    /* texto*/
+    font-weight: bold;
+    font-size: 10px;
+    /* visual*/
+    color: rgb(202, 183, 7);
+    /* otros*/
+  }
+
+
 
 }
