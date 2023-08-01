@@ -16,36 +16,39 @@
   box-shadow: -1px 1px 7px 1px rgba(0, 0, 0, 0.75);
 }
 
-
+.mapa{
+  width: 600px ; 
+  height: 450px ;
+}
 .c1{
   height: 900px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 }
 
 .c2{
-  height: 1000px;
+  height: 900px;
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: right;
   align-items: center;
 }
 
 .c3{
-  height: 1000px;
+  height: 900px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 }
 
 .c4{
-  height: 1000px;
+  height: 900px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 }
 
@@ -174,7 +177,7 @@ p1                       /*    letra negra a la izq */ {
 /*//////////////////////////////////////////////*/
 .slider-frame {
 	width: 600px;
-    height: auto;
+  height: auto;
 	margin:50px auto 0;
 	overflow: hidden;
 }
@@ -348,27 +351,33 @@ p1                       /*    letra negra a la izq */ {
     height: 150px;
   }
   .c1{
-    max-width: 400px;
-    max-height: 400px;
+    max-width:768px;
+    max-height: 300px;
+    background-size:100%;
+    
+   
   }
   .c2{
-    height: 400px;
-    width: 400px;
+    max-width:768px;
+    max-height: 300px;
+    background-size:100%;
   }
   .c3{
-    height: 400px;
-    width: 400px;
+    max-width:768px;
+    max-height: 300px;
+    background-size:100%;
   }
   .c4{
-    height: 400px;
-    width: 400px;
+    max-width:768px;
+    max-height: 300px;
+    background-size:100%;
   }
   h3                    /* titulo equipos especificos a la izquierda    */ {
     /*posicion*/
     /* box model*/
     /* texto*/
     font-weight: bold;
-    font-size: 20px;
+    font-size: 14px;
   
     /* visual*/
     color: rgb(202, 183, 7);
@@ -384,7 +393,14 @@ p1                       /*    letra negra a la izq */ {
     color: rgb(202, 183, 7);
     /* otros*/
   }
-
-
+  .slider-frame {
+    max-width: 200px;
+    max-height: 200px;
+  
+  }
+.mapa{
+  max-width: 100%;
+  max-height: 300px;
+}
 
 }
