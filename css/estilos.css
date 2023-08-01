@@ -378,6 +378,7 @@ p1                       /*    letra negra a la izq */ {
     /* texto*/
     font-weight: bold;
     font-size: 14px;
+    text-shadow: 3px  1px 1px #153358;
   
     /* visual*/
     color: rgb(250, 226, 13);
@@ -391,6 +392,7 @@ p1                       /*    letra negra a la izq */ {
     font-size: 10px;
     /* visual*/
     color: rgb(250, 226, 13);
+    text-shadow: 3px  1px 1px #153358;
     /* otros*/
   }
   .slider-frame {
