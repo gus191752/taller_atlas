@@ -380,7 +380,7 @@ p1                       /*    letra negra a la izq */ {
     font-size: 14px;
   
     /* visual*/
-    color: rgb(202, 183, 7);
+    color: rgb(250, 226, 13);
     /* otros*/
   }
   h4                    /* titulo equipos especificos a la izquierda    */ {
@@ -390,12 +390,12 @@ p1                       /*    letra negra a la izq */ {
     font-weight: bold;
     font-size: 10px;
     /* visual*/
-    color: rgb(202, 183, 7);
+    color: rgb(250, 226, 13);
     /* otros*/
   }
   .slider-frame {
     max-width: 200px;
-    max-height: 200px;
+    max-height: 300px;
   
   }
 .mapa{
