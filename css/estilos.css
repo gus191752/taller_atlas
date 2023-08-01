@@ -16,6 +16,33 @@
   box-shadow: -1px 1px 7px 1px rgba(0, 0, 0, 0.75);
 }
 
+.c1{
+  background-color: #153358;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.c2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.c3{
+  background-color: #153358;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen_div{
+  width: 300px;
+  height: 300px;
+}
 
 h1                     /*   titulo principal  */
  {
@@ -292,4 +319,10 @@ p1                       /*    letra negra a la izq */ {
   .contenedor-boton:focus:not(:focus-visible) {
     outline: none;
   }
+
+  .imagen_div{
+    width: 150px;
+    height: 150px;
+  }
+
 }
