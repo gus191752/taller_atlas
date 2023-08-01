@@ -16,8 +16,9 @@
   box-shadow: -1px 1px 7px 1px rgba(0, 0, 0, 0.75);
 }
 
+
 .c1{
-  background-color: #153358;
+  height: 900px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -25,14 +26,23 @@
 }
 
 .c2{
+  height: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.c3{
+  height: 1000px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.c3{
-  background-color: #153358;
+.c4{
+  height: 1000px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -50,10 +60,10 @@ h1                     /*   titulo principal  */
   /* box model*/
   /* texto*/
   font-weight: bold;
-  font-size: 30px;
+  font-size: 40px;
   
   /* visual*/
-  color: black;
+  color: green;
   /* otros*/
 }
 h2                    /*    titulo secundario  */ {
@@ -61,10 +71,10 @@ h2                    /*    titulo secundario  */ {
   /* box model*/
   /* texto*/
   font-weight: bold;
-  font-size: 20px;
+  font-size: 30px;
 
   /* visual*/
-  color: black;
+  color: green;
   /* otros*/
 }
 h3                    /* titulo equipos especificos a la izquierda    */ {
@@ -323,6 +333,22 @@ p1                       /*    letra negra a la izq */ {
   .imagen_div{
     width: 150px;
     height: 150px;
+  }
+  .c1{
+    max-width: 400px;
+    max-height: 400px;
+  }
+  .c2{
+    height: 400px;
+    width: 400px;
+  }
+  .c3{
+    height: 400px;
+    width: 400px;
+  }
+  .c4{
+    height: 400px;
+    width: 400px;
   }
 
 }
