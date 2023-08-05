@@ -1,3 +1,5 @@
+
+
 .contenedor_parametros {
   /*posicion*/
   /* box model*/
@@ -283,7 +285,7 @@ p1                       /*    letra negra a la izq */ {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 350px;
+    width: 100%;
   }
   .contenedorTotal > section {
     /* diseño dispositivos escritorio*/
@@ -302,9 +304,9 @@ p1                       /*    letra negra a la izq */ {
   }
 
   .logo {
-    font-size: 25px;
-    padding: 0 20px;
-    line-height: 60px;
+    font-size: 30px;
+    padding: 0 40px;
+    line-height: 75px;
   }
 
   .contenedor-menu {
