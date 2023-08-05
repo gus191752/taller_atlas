@@ -232,7 +232,7 @@ p1                       /*    letra negra a la izq */ {
   justify-content: space-between;
   margin: 0 auto;
   max-width: 992px;
-  padding: 0;
+  padding: 0 auto;
 }
 .contenedor-link {
   color:  rgb(241, 218, 9);
@@ -248,7 +248,7 @@ p1                       /*    letra negra a la izq */ {
   display: flex;
   margin-right: 40px;
   list-style: none;
-  padding: 0;
+  padding: 0 100px;
   width: 100%;
 }
 .contenedor-menu-item {
@@ -293,7 +293,7 @@ p1                       /*    letra negra a la izq */ {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    padding: 0;
+    
   }
   .contenedorTotal > section {
     /* diseño dispositivos escritorio*/
