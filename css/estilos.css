@@ -129,7 +129,7 @@ html {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  max-width: 100%;
+  width: 100%;
 }
 
 .contenedorTotal > section {
@@ -256,9 +256,8 @@ p1                       /*    letra negra a la izq */ {
   padding: 8px 12px;
   border-radius: 3px;
 }
-.contenedor-menu-link:hover,
-.contenedor-menu-link_active {
-  background-color: #112c50;
+.contenedor-menu-link:hover , .contenedor-menu-link_active {
+  background-color: #608cc5;
   transition: 0.5s;
 }
 
@@ -337,7 +336,9 @@ p1                       /*    letra negra a la izq */ {
     display: block;
     position: fixed;
     top: 0;
-    left: 80%;
+    left: 85%;
+    height: 80px;
+
   }
 
   .contenedor-menu_visible {
