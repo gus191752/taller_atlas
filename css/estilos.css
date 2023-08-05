@@ -224,11 +224,14 @@ p1                       /*    letra negra a la izq */ {
   width: 100%;
   top: 0;
   left: 0;
+  padding: 0;
 }
 .contenedor {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  max-width: 992px;
+  padding: 0;
 }
 .contenedor-link {
   color:  rgb(241, 218, 9);
@@ -244,6 +247,8 @@ p1                       /*    letra negra a la izq */ {
   display: flex;
   margin-right: 40px;
   list-style: none;
+  padding: 0;
+  width: 100%;
 }
 .contenedor-menu-item {
   font-size: 12px;
@@ -254,11 +259,13 @@ p1                       /*    letra negra a la izq */ {
 }
 .contenedor-menu-link {
   padding: 8px 12px;
-  border-radius: 3px;
+  border-radius: 5px;
+  
 }
-.contenedor-menu-link:hover , .contenedor-menu-link_active {
+.contenedor-menu-link:hover {
   background-color: #608cc5;
-  transition: 0.5s;
+  transition: 0.4s;
+  font-size: 16px;
 }
 
 .contenedor-boton {
@@ -285,6 +292,7 @@ p1                       /*    letra negra a la izq */ {
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    padding: 0;
   }
   .contenedorTotal > section {
     /* diseño dispositivos escritorio*/
@@ -314,11 +322,12 @@ p1                       /*    letra negra a la izq */ {
     margin: 0;
     background-color: #112c50;
     position: fixed;
-    top: 60px;
+    left: 0;
+    top: 80px;
     width: 100%;
     padding: 20px 0;
 
-    height: calc(100% - 60px);
+    height: calc(100% - 80px);
     overflow-y: auto;
 
     left: 100%;
@@ -327,8 +336,7 @@ p1                       /*    letra negra a la izq */ {
   .contenedor-menu-item {
     line-height: 70px;
   }
-  .contenedor-menu-link:hover,
-  .contenedor-menu-link_active {
+  .contenedor-menu-link:hover {
     background: none;
     color: #83c5f7;
   }
