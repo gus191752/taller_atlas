@@ -26,7 +26,7 @@
   height: 900px;
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -34,7 +34,7 @@
   height: 900px;
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -42,7 +42,7 @@
   height: 900px;
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -50,7 +50,7 @@
   height: 900px;
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -322,14 +322,11 @@ p1                       /*    letra negra a la izq */ {
     margin: 0;
     background-color: #112c50;
     position: fixed;
-    left: 0;
     top: 80px;
     width: 100%;
     padding: 20px 0;
-
     height: calc(100% - 80px);
     overflow-y: auto;
-
     left: 100%;
     transition: left 0.83s;
   }
