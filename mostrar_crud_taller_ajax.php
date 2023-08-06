@@ -20,10 +20,13 @@
             <thead>
 
                 <tr>
-                    <th colspan="5"><a href="cargar_crud_taller.php">Nuevo Producto</a></th>
+                    <th colspan="5"><a href="cargar_crud_taller.php">Nuevo Trabajo</a></th>
                 </tr>
                 <tr>
                     <th colspan="5"><a href="mostrarconajax_rendimiento_trabajador.php">Rendimiento_trabajador</a></th>
+                </tr>
+                <tr>
+                    <th colspan="5"><a href="administrador.html">Volver al Inicio</a></th>
                 </tr>
                 <tr>                    
                     <th>id_trabajo</th>

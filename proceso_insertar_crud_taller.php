@@ -23,11 +23,11 @@ $conn_taller = new conexion_db_taller();
 ///////////////////////////////////// INSERTAR  ///////////////////////////////////////////////
 $consulta_insert_taller = "INSERT INTO registro_trabajos_taller (cedula_cliente, placas, vin , modelo_marca, kilometraje, cedula_trabajador, titulo_trabajo , descripcion_falla, diagnostico_solucion, inspeccion_final, fecha_ingreso, fecha_egreso, costo_reparacion ) VALUES ('$cedula_cliente' , '$placas' , '$vin' ,            '$modelo_marca' , '$kilometraje' , '$cedula_trabajador' , '$titulo_trabajo' ,                  '$descripcion_falla' , '$diagnostico_solucion' , '$inspeccion_final' , '$fecha_ingreso' , '$fecha_egreso' , '$costo_reparacion' )";
 
-$consulta_insert_rendimiento_trabajador = "INSERT INTO rendimiento_trabajador ( id_trabajo, cedula_trabajador, placas , modelo_marca , titulo_trabajo, costo_reparacion , fecha_egreso ) VALUES ( '$id_trabajo' ,  '$cedula_trabajador' ,  '$placas',  '$modelo_marca' , '$titulo_trabajo' , '$costo_reparacion' , '$fecha_egreso') "; 
+//$consulta_insert_rendimiento_trabajador = "INSERT INTO rendimiento_trabajador ( id_trabajo, cedula_trabajador, placas , modelo_marca , titulo_trabajo, costo_reparacion , fecha_egreso ) VALUES ( '$id_trabajo' ,  '$cedula_trabajador' ,  '$placas',  '$modelo_marca' , '$titulo_trabajo' , '$costo_reparacion' , '$fecha_egreso') "; 
 
 $insert_taller = mysqli_query($conn_taller->conectartaller(),$consulta_insert_taller); 
 
-$insert_rendimiento_trabajador = mysqli_query($conn_taller->conectartaller(),$consulta_insert_rendimiento_trabajador);
+//$insert_rendimiento_trabajador = mysqli_query($conn_taller->conectartaller(),$consulta_insert_rendimiento_trabajador);
 
 
 if ($insert_taller)
@@ -37,7 +37,8 @@ if ($insert_taller)
 }
 else
 {
-	echo"no se inserto";
+	//echo"no se inserto";
+	header("location: mostrar_crud_taller_ajax.php");
 }
 
 

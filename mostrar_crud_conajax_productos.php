@@ -22,6 +22,9 @@
                 <tr>
                     <th colspan="5"><a href="cargar_crud_cartera_productos.php">Nuevo Producto</a></th>
                 </tr>
+                <tr>
+                    <th colspan="5"><a href="administrador.html">Volver al Inicio</a></th>
+                </tr>
                 <tr>                    
                     <th>Codigo</th>
                     <th>Descripcion</th>

@@ -17,5 +17,8 @@
             <input type="submit" value="Aceptar"><br><br>
         </form>
     </div>
+    <br>
+    <a href="administrador.html">Volver</a>
+<br>
 </body>
 </html>

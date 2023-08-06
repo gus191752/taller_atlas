@@ -23,5 +23,8 @@
             <input type="submit" value="Aceptar"><br><br>
         </form>
     </div>
+    <br>
+    <a href="mostrar_crud_conajax_productos.php">Volver</a>
+<br>
 </body>
 </html>
