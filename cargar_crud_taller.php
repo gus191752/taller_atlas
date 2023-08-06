@@ -28,7 +28,7 @@
         </form>
     </div>
     <br>
-    <a href="administrador.html">Volver</a>
+    <a href="mostrar_crud_taller_ajax.php">Volver</a>
 <br>
 </body>
 </html>
