@@ -32,7 +32,7 @@
                     <th>Modelo</th>
                     <th>Tipo</th>
                     <th>Año</th> 
-                    <th>Imagen1</th>                
+                                   
                     <th>Cantidad</th>
                     <th>Precio</th>
                 </tr>

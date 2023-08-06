@@ -38,6 +38,9 @@
             <input type="submit" value="Aceptar"><br><br>
         </form>
     </div>
+    <br>
+    <a href="mostrar_crud_taller_ajax.php">Volver</a>
+<br>
     <?php
         }
     ?>
