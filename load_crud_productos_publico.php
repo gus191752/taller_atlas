@@ -36,13 +36,13 @@ if ($numeros_columnas>0)
 		{
 		$html .= '<tr>';
 		$html .= '<td>' . $row['codigo'] . '</td>';
+		$html .= '<td>' . $row['referencia'] . '</td>';
 		$html .= '<td>' . $row['descripcion'] . '</td>';
-		$html .= '<td>' . $row['marca'] . '</td>';
-		$html .= '<td>' . $row['modelo'] . '</td>';
-		$html .= '<td>' . $row['tipo'] . '</td>';
-		$html .= '<td>' . $row['fecha_fabricacion'] . '</td>';		 
-		$html .= '<td>' . $row['cantidad'] . '</td>';
 		$html .= '<td>' . $row['precio'] . '</td>';
+		$html .= '<td>' . $row['cantidad'] . '</td>';
+		$html .= '<td>' . $row['marca'] . '</td>';	 
+		
+		
 		$html .= '</tr>';
 
 		}
