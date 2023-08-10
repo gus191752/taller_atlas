@@ -16,15 +16,15 @@
                 </tr>
                 <tr>
                     <th>Codigo</th>
+                    <th>Referencia</th>
                     <th>Descripcion</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
                     <th>Marca</th>
-                    <th>Modelo</th>
-                    <th>Tipo</th>
-                    <th>Año</th>
                     <th>Imagen1</th>
                     <th>Imagen2</th>
-                    <th>Cantidad</th>
-                    <th>Precio</th>
+                    
+                    
                 </tr>
             </thead>
             <tbody>
@@ -39,15 +39,15 @@
                 ?>
                 <tr>
                     <td><?php echo $row->codigo; ?></td>
+                    <td><?php echo $row->referencia; ?></td>
                     <td><?php echo $row->descripcion; ?></td>
+                    <td><?php echo $row->precio; ?></td>
+                    <td><?php echo $row->cantidad; ?></td>
                     <td><?php echo $row->marca; ?></td>
-                    <td><?php echo $row->modelo; ?></td>
-                    <td><?php echo $row->tipo; ?></td>
-                    <td><?php echo $row->fecha_fabricacion; ?></td>
                     <td><img height='40px' src="data:image/jpg;base64, <?php echo base64_encode($row->imagen1); ?>"></td>
                     <td><img height='40px' src="data:image/jpg;base64, <?php echo base64_encode($row->imagen2); ?>"></td>
-                    <td><?php echo $row->cantidad; ?></td>
-                    <td><?php echo $row->precio; ?></td>
+                    
+                    
                     <th><a href="modificar_crud_cartera_productos.php?codigo= <?php echo $row->codigo; ?>">Modificar</a></th>
                     <th><a href="proceso_eliminar_crud_cartera_productos.php?codigo= <?php echo $row->codigo; ?>">Eliminar</a></th>
                 </tr>  

@@ -1,6 +1,6 @@
 <?php 
 
-$columnas=['codigo', 'descripcion', 'marca', 'modelo', 'tipo', 'fecha_fabricacion', 'imagen1', 'imagen2', 'precio', 'cantidad'];
+$columnas=['codigo', 'referencia', 'descripcion','precio', 'cantidad', 'marca', 'imagen1', 'imagen2'];
 
 $tabla="productos";
 
@@ -36,16 +36,16 @@ if ($numeros_columnas>0)
 		{
 		$html .= '<tr>';
 		$html .= '<td>' . $row['codigo'] . '</td>';
+		$html .= '<td>' . $row['referencia'] . '</td>';
 		$html .= '<td>' . $row['descripcion'] . '</td>';
+		$html .= '<td>' . $row['precio'] . '</td>';
+		$html .= '<td>' . $row['cantidad'] . '</td>';
 		$html .= '<td>' . $row['marca'] . '</td>';
-		$html .= '<td>' . $row['modelo'] . '</td>';
-		$html .= '<td>' . $row['tipo'] . '</td>';
-		$html .= '<td>' . $row['fecha_fabricacion'] . '</td>';
 		//$html .= '<td>' . $row['imagen1'] . '</td>';
 		//$html .= '<td>'.'<img height="70px" src="data:image/jpg;base64,base64_encode(' .$row['codigo'] . ')">'.'</td>';  // hay q resolver este punto
 		 
-		$html .= '<td>' . $row['cantidad'] . '</td>';
-		$html .= '<td>' . $row['precio'] . '</td>';
+		
+		
 		$html .= '<th><a href="modificar_crud_cartera_productos.php?codigo=' . $row['codigo'] . '">Modificar</a></th>';
 		$html .= '<th><a href="proceso_eliminar_crud_cartera_productos.php?codigo=' . $row['codigo'] . '">Eliminar</a></th>';
 		$html .= '</tr>';

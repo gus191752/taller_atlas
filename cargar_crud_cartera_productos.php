@@ -11,15 +11,14 @@
     <div>
         <form action="proceso_insertar_crud_cartera_productos.php" method="POST" enctype="multipart/form-data"><br><br>
             <input type="text" REQUIRED name="codigo" placeholder="Codigo..." value=""><br><br>
+            <input type="text" REQUIRED name="referencia" placeholder="Referencia..." value=""><br><br>
             <input type="text" REQUIRED name="descripcion" placeholder="Descripcion Producto..." value=""><br><br>
+            <input type="text" name="precio" placeholder="Precio..." value=""><br><br>
+            <input type="text" name="cantidad" placeholder="Cantidad..." value=""><br><br>
             <input type="text" name="marca" placeholder="Marca..." value=""><br><br>
-            <input type="text" name="modelo" placeholder="Modelo..." value=""><br><br>
-            <input type="text" name="tipo" placeholder="Tipo de Parte..." value=""><br><br>
-            <input type="text" name="fecha_fabricacion" placeholder="Año..." value=""><br><br>
             <input type="file" name="imagen1"><br><br>
             <input type="file" name="imagen2"><br><br>
-            <input type="text" name="cantidad" placeholder="Cantidad..." value=""><br><br>
-            <input type="text" name="precio" placeholder="Precio..." value=""><br><br>
+            
             <input type="submit" value="Aceptar"><br><br>
         </form>
     </div>

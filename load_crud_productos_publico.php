@@ -1,6 +1,6 @@
 <?php 
 
-$columnas=['codigo', 'descripcion', 'marca', 'modelo', 'tipo', 'fecha_fabricacion', 'imagen1', 'imagen2', 'precio', 'cantidad'];
+$columnas=['codigo', 'referencia','descripcion', 'precio', 'cantidad', 'marca',  'imagen1', 'imagen2'];
 
 $tabla="productos";
 

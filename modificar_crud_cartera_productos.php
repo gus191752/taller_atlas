@@ -21,15 +21,13 @@
     <div>
         <form action="proceso_modificar_crud_cartera_productos.php?codigo= <?php echo $row->codigo; ?>" method="POST" enctype="multipart/form-data"><br><br>
             <input type="text" REQUIRED name="codigo" placeholder="Codigo..." value="<?php echo $row->codigo; ?>"><br><br>
+            <input type="text" REQUIRED name="referencia" placeholder="Referencia..." value="<?php echo $row->referencia; ?>"><br><br>
             <input type="text" REQUIRED name="descripcion" placeholder="Descripcion Producto..." value="<?php echo $row->descripcion; ?>"><br><br>
+            <input type="text" name="precio" placeholder="Precio..." value="<?php echo $row->precio;?>"><br><br>
+            <input type="text" name="cantidad" placeholder="Cantidad..." value="<?php echo $row->cantidad;?>"><br><br>
             <input type="text" name="marca" placeholder="Marca..." value="<?php echo $row->marca;?>"><br><br>
-            <input type="text" name="modelo" placeholder="Modelo..." value="<?php echo $row->modelo;?>"><br><br>
-            <input type="text" name="tipo" placeholder="Tipo de Parte..." value="<?php echo $row->tipo;?>"><br><br>
-            <input type="text" name="fecha_fabricacion" placeholder="Año..." value="<?php echo $row->fecha_fabricacion;?>"><br><br>
             <img height="70px" src="data:image/jpg;base64, <?php echo base64_encode($row->imagen1);?>"><br><br>
             <img height="70px" src="data:image/jpg;base64, <?php echo base64_encode($row->imagen2);?>"><br><br>
-            <input type="text" name="cantidad" placeholder="Cantidad..." value="<?php echo $row->cantidad;?>"><br><br>
-            <input type="text" name="precio" placeholder="Precio..." value="<?php echo $row->precio;?>"><br><br>
             <input type="file" name="imagen1"><br><br>
             <input type="file" name="imagen2"><br><br>
             <input type="submit" value="Aceptar"><br><br>

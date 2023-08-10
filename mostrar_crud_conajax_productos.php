@@ -27,14 +27,13 @@
                 </tr>
                 <tr>                    
                     <th>Codigo</th>
+                    <th>Referencia</th>
                     <th>Descripcion</th>
-                    <th>Marca</th>
-                    <th>Modelo</th>
-                    <th>Tipo</th>
-                    <th>Año</th> 
-                                   
-                    <th>Cantidad</th>
                     <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Marca</th>                              
+                    
+                    
                 </tr>
             </thead>
             <tbody id="contenido" ></tbody>
