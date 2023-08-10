@@ -40,13 +40,11 @@
 <form action="" method="POST" >
     <label for="campo"  >Buscar: </label>
     <input type="text" name="campo" id="campo" placeholder="Ingresa aqui tu busqueda..." value="">
-
+    
 </form>
-
+<a href="index.html">Vover al Inicio</a>
 <table border="2px " >
     <thead>
-
-      
         <tr>                    
             <th>Codigo</th>
             <th>Referencia</th>
@@ -54,7 +52,6 @@
             <th>Precio</th>
             <th>Cantidad</th>
             <th>Marca</th>
-            
         </tr>
     </thead>
     <tbody id="contenido" ></tbody>
