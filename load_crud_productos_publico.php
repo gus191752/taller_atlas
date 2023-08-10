@@ -21,7 +21,7 @@ if ($campo != null)
 		$peticion_where .= ")"; 
 	}
 		
-$query = "SELECT " . implode(", ", $columnas) . " FROM $tabla $peticion_where " ; //OJO
+$query = "SELECT " . implode(", ", $columnas) . " FROM $tabla $peticion_where AND $columnas[4] != 0 " ; //OJO
 //echo $query;
 //exit;  // corta el bucle para ver la peticion
 $conexion= new mysqli('localhost','root','','basedatos');
