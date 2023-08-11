@@ -15,12 +15,12 @@
             <input type="text" name="telefono_trabajador" placeholder="Telefono del Trabajador..." value=""><br><br>
             <input type="text" name="direccion_trabajador" placeholder="Direccion del Trabajador..." value=""><br><br>
             <input type="date" name="fecha_ingreso_trabajador" placeholder="Fecha de Ingreso Trabajador..." value=""><br><br>
-            <input type="date" name="fecha_egreso_trabajador" placeholder="Fecha de Ingreso Trabajador..." value=""><br><br>
+            <input type="date" name="fecha_egreso_trabajador" placeholder="Fecha de Ingreso Trabajador..." value="0"><br><br>
             <input type="submit" value="Aceptar"><br><br>
         </form>
     </div>
     <br>
-    <a href="administrador.html">Volver</a>
+    <a href="mostrarconajax_trabajadores.php">Volver</a>
 <br>
 </body>
 </html>

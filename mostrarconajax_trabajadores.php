@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mostrar cartera de productos con Ajax</title>
+    <title>Trabajadores de Taller Atlas</title>
 </head>
 <body>
-    <h1>Mostrar Cartera de Productos con Ajax</h1>
+    <h1>Trabajadores de Taller Atlas</h1>
     <div>
 
         <form action="" method="POST" >
@@ -15,14 +15,17 @@
             <input type="text" name="campo_trabajador" id="campo_trabajador">
 
         </form>
-
+        
         <table border="2px " >
             <thead>
 
                 <tr>
-                    <th colspan="5"><a href="cargar_crud_cartera_trabajadores.php">Nuevo Producto</a></th>
+                    <th colspan="5"><a href="cargar_crud_cartera_trabajadores.php">Nuevo Trabajador</a></th>
+
                 </tr>
-                
+                <tr>
+                <th colspan="5"><a href="administrador.html">Volver al Administrador</a></th>
+                </tr>
                 <tr>                    
                     <th>Cedula</th>
                     <th>Nombre</th>

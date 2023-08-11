@@ -18,7 +18,7 @@
         </form>
     </div>
     <br>
-    <a href="administrador.html">Volver</a>
+    <a href="mostrarconajax_clientes.php">Volver</a>
 <br>
 </body>
 </html>
