@@ -21,3 +21,12 @@ contenedormenuLinks.forEach((contenedormenuLink) => {
   });
 });
 ///////////////////////////////////////////////////////
+function buscar_datos_tabla_trabajadores()
+{
+alert( "perdio el foco trabajador");
+}
+
+function buscar_datos_tabla_productos()
+{
+alert( "perdio el foco descripcion");
+}
