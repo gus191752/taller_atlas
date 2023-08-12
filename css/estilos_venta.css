@@ -1,0 +1,16 @@
+.accion_cliente
+{
+background-color: rgb(74, 173, 190);
+border-radius: 30px ;
+border-color: blue;
+padding: 30px;
+margin-right: 50px;
+margin-left: 50px;
+}
+
+.titulo_pag
+{
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
