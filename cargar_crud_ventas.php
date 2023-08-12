@@ -14,23 +14,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-
-
 </head>
+
+
 <body>
+  <section id="contenedor_pag">
+  <div class="titulo_pag">
+    <h1><i class="fa-solid fa-box"></i>Ventas</h1>
+
+  </div>
+
+  </section>
+
     <h1>Administrador de Ventas</h1>
     <div>
         <form ><br><br>
+        <input type="text" REQUIRED name="cedula" placeholder="Cedula..." value="" id="cedula"  onblur="buscar_datos_tabla_trabajadores();"><br><br>
             <input type="text"  name="trabajador" placeholder="Nombre de Trabajador..." id="vendedor" ><br><br>
-            <input type="text" REQUIRED name="cedula" placeholder="Cedula..." value="
-            " id="cedula"  onblur="buscar_datos_tabla_trabajadores();"><br><br>
-            <input type="text"  name="descripcion" placeholder="Descripcion..." value="" id="descripcion"><br><br>
             <input   type="text" REQUIRED name="codigo" placeholder="Codigo..." value="" id="codigo" onblur="buscar_datos_tabla_productos();"><br><br>
+            <input type="text"  name="descripcion" placeholder="Descripcion..." value="" id="descripcion"><br><br>
             <input type="text" name="referencia" placeholder="Referencia..." value="" id="referencia"><br><br>
             <input type="text" name="precio" placeholder="Precio..." value="" id="precio"><br><br>
             <input type="text" name="cantidad" placeholder="Cantidad..." value="" id="cantidad" onblur="multiplicar_precio_x_cantidad();"><br><br>
-            <input type="text" name="total" placeholder="Total..." value="" id="total"><br><br>
-            
+            <input type="text" name="total" placeholder="Total..." value="" id="total"><br><br>           
             
             <input type="button" value="Aceptar"><br><br>
         </form>
@@ -56,11 +62,17 @@
       url:   'cargar_crud_ventas_formulario_auto.php',
       type:  'post',
       beforeSend: function() 
-      {alert("enviando");}, 
+      {
+        //alert("enviando");
+      }, 
       error: function()
-      {alert("Error");},
+      {
+        //alert("Error");
+      },
       complete: function() 
-      {alert("¡Listo!");},
+      {
+        //alert("¡Listo!");
+      },
       success:  function (valores_trabajadores) 
       {
         $("#vendedor").val(valores_trabajadores.nombre_trabajador);
@@ -84,11 +96,17 @@ function buscar_datos_tabla_productos()
       url:   'cargar_crud_ventas_formulario_auto.php',
       type:  'post',
       beforeSend: function() 
-      {alert("enviando");}, 
+      {
+        //alert("enviando");
+      }, 
       error: function()
-      {alert("Error");},
+      {
+        //alert("Error");
+      },
       complete: function() 
-      {alert("¡Listo!");},
+      {
+        //alert("¡Listo!");
+      },
       success:  function (valores_productos) 
       {
         $("#descripcion").val(valores_productos.descripcion);
