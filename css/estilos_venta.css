@@ -12,5 +12,17 @@ margin-left: 50px;
 {
     margin-right: 50px;
     margin-left: 50px;
-    margin-top: 50px;
+    margin-top: 10px;
+}
+
+.accion_compra
+{
+background-color: rgb(74, 173, 190);
+border-radius: 30px ;
+border-color: blue;
+padding: 30px;
+margin-right: 50px;
+margin-left: 50px;
+align-items: flex-start;
+flex-direction: column;
 }

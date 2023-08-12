@@ -24,32 +24,34 @@
     <div class="accion_cliente">
       <h1>Datos del Cliente</h1>
       <br>
-      <br>
-      <thead>
-        <th><input type="text" REQUIRED name="cedula" placeholder="Cedula..." value="" id="cedula"  onblur="buscar_datos_tabla_trabajadores();"><br><br></th>
-        <td><input type="text"  name="trabajador" placeholder="Nombre de Trabajador..." id="vendedor" ><br><br></td>
-        <th><input   type="text" REQUIRED name="codigo" placeholder="Codigo..." value="" id="codigo" onblur="buscar_datos_tabla_productos();"><br><br></th>
-        
-      </thead>
+      
+      <form >
+        <input type="text" REQUIRED name="cedula" placeholder="Cedula..." value="" id="cedula"  onblur="buscar_datos_tabla_trabajadores();">
+        <input type="text"  name="trabajador" placeholder="Nombre de Trabajador..." id="vendedor" >
+      </form>
     </div>
   </div>
-  </section>
+<br>
+<br>
 
-    
-    <div>
-        <form ><br><br>
-        <input type="text" REQUIRED name="cedula" placeholder="Cedula..." value="" id="cedula"  onblur="buscar_datos_tabla_trabajadores();"><br><br>
-            <input type="text"  name="trabajador" placeholder="Nombre de Trabajador..." id="vendedor" ><br><br>
-            <input   type="text" REQUIRED name="codigo" placeholder="Codigo..." value="" id="codigo" onblur="buscar_datos_tabla_productos();"><br><br>
-            <input type="text"  name="descripcion" placeholder="Descripcion..." value="" id="descripcion"><br><br>
-            <input type="text" name="referencia" placeholder="Referencia..." value="" id="referencia"><br><br>
-            <input type="text" name="precio" placeholder="Precio..." value="" id="precio"><br><br>
-            <input type="text" name="cantidad" placeholder="Cantidad..." value="" id="cantidad" onblur="multiplicar_precio_x_cantidad();"><br><br>
-            <input type="text" name="total" placeholder="Total..." value="" id="total"><br><br>           
-            
-            <input type="button" value="Aceptar"><br><br>
-        </form>
+  <div class="datos_compra">
+    <div class="accion_compra">
+      <h1>Listado de Repuesto</h1>
+      <br>
+      <form >
+        <input style="width: 70px"  type="text" REQUIRED name="codigo" placeholder="Codigo..." value="" id="codigo" onblur="buscar_datos_tabla_productos();">
+        <input style="width: 500px"type="text"  name="descripcion" placeholder="Descripcion..." value="" id="descripcion">
+        <input style="width: 70px" type="text" name="precio" placeholder="Precio..." value="" id="precio">
+        <input style="width: 70px" type="text" name="cantidad" placeholder="Cantidad..." value="" id="cantidad" onblur="multiplicar_precio_x_cantidad();">
+        <input style="width: 70px" type="text" name="total" placeholder="Total..." value="" id="total"><br>          
+        <a href="administrador.html">agregar +</a>
+      </form>
     </div>
+  </div>
+
+
+
+  </section>
     <br>
     <a href="administrador.html">Volver</a>
 <br>
