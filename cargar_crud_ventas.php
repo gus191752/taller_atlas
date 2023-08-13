@@ -23,7 +23,7 @@
   <div class="datos_cliente">
     <div class="accion_cliente">
       <h1>Datos del Cliente</h1>
-      <br>
+   
       
       <form >
         <input type="text" REQUIRED name="cedula" placeholder="Cedula..." value="" id="cedula"  onblur="buscar_datos_tabla_trabajadores();">
@@ -31,19 +31,18 @@
       </form>
     </div>
   </div>
-<br>
-<br>
+
 
   <div class="datos_compra">
   <h1>Listado de Repuesto</h1>
-      <br>
+      
     <div  class="accion_compra">
       
       <label>1</label> - <input style="width: 70px"  type="text" REQUIRED name="codigo" placeholder="Codigo..." value="" id="codigo" onblur="buscar_datos_tabla_productos();">
       <input style="width: 400px"type="text"  name="descripcion" placeholder="Descripcion..." value="" id="descripcion">
       <input style="width: 70px" type="text" name="precio" placeholder="Precio..." value="" id="precio">
       <input style="width: 70px" type="text" name="cantidad" placeholder="Cantidad..." value="" id="cantidad" onblur="multiplicar_precio_x_cantidad();">
-      <input style="width: 70px" type="text" name="total" placeholder="Total..." value="" id="total"><br>          
+      <input style="width: 70px" type="text" name="total" placeholder="Total..." value="" id="total">        
       <div id="agregar_fila_dinamica"></div>
       
     </div>
