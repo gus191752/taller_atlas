@@ -35,20 +35,22 @@
 <br>
 
   <div class="datos_compra">
-    <div class="accion_compra">
-      <h1>Listado de Repuesto</h1>
+  <h1>Listado de Repuesto</h1>
       <br>
-      <form >
-        <input style="width: 70px"  type="text" REQUIRED name="codigo" placeholder="Codigo..." value="" id="codigo" onblur="buscar_datos_tabla_productos();">
-        <input style="width: 500px"type="text"  name="descripcion" placeholder="Descripcion..." value="" id="descripcion">
-        <input style="width: 70px" type="text" name="precio" placeholder="Precio..." value="" id="precio">
-        <input style="width: 70px" type="text" name="cantidad" placeholder="Cantidad..." value="" id="cantidad" onblur="multiplicar_precio_x_cantidad();">
-        <input style="width: 70px" type="text" name="total" placeholder="Total..." value="" id="total"><br>          
-        <a href="administrador.html">agregar +</a>
-      </form>
+    <div  class="accion_compra">
+      
+      <label>1</label> - <input style="width: 70px"  type="text" REQUIRED name="codigo" placeholder="Codigo..." value="" id="codigo" onblur="buscar_datos_tabla_productos();">
+      <input style="width: 400px"type="text"  name="descripcion" placeholder="Descripcion..." value="" id="descripcion">
+      <input style="width: 70px" type="text" name="precio" placeholder="Precio..." value="" id="precio">
+      <input style="width: 70px" type="text" name="cantidad" placeholder="Cantidad..." value="" id="cantidad" onblur="multiplicar_precio_x_cantidad();">
+      <input style="width: 70px" type="text" name="total" placeholder="Total..." value="" id="total"><br>          
+      <div id="agregar_fila_dinamica"></div>
+      
     </div>
   </div>
 
+    
+    <button id="agregar">Agregar</button>   
 
 
   </section>
@@ -57,6 +59,49 @@
 <br>
 
 <script>
+
+
+  
+ const contenedor=document.querySelector('#agregar_fila_dinamica');
+ 
+ const btnAgregar= document.querySelector('#agregar');
+
+ let total=2;
+
+ btnAgregar.addEventListener('click', e => {
+    let div = document.createElement('div');
+    div.innerHTML = `<label>${total++}</label> - 
+      <input style="width: 70px"  type="text" REQUIRED name="codigo" placeholder="Codigo..." value="" id="codigo" onblur="buscar_datos_tabla_productos();">
+      <input style="width: 400px"type="text"  name="descripcion" placeholder="Descripcion..." value="" id="descripcion">
+      <input style="width: 70px" type="text" name="precio" placeholder="Precio..." value="" id="precio">
+      <input style="width: 70px" type="text" name="cantidad" placeholder="Cantidad..." value="" id="cantidad" onblur="multiplicar_precio_x_cantidad();">
+      <input style="width: 70px" type="text" name="total" placeholder="Total..." value="" id="total"><button onclick="eliminar(this)">Eliminar</button>`;
+    contenedor.appendChild(div);
+    
+})
+
+//@param {this} e 
+
+const eliminar = (e) => {
+    const divPadre = e.parentNode;
+    contenedor.removeChild(divPadre);
+    actualizarContador();
+};
+
+const actualizarContador = () => {
+    let divs = contenedor.children;
+    total = 2;
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].children[0].innerHTML = total++;
+    }//end for
+};
+
+
+
+
+
+
+
    function buscar_datos_tabla_trabajadores()
 {
     var parametros = 
@@ -104,6 +149,7 @@ function buscar_datos_tabla_productos()
       beforeSend: function() 
       {
         //alert("enviando");
+        //alert(codigo);
       }, 
       error: function()
       {
@@ -117,6 +163,7 @@ function buscar_datos_tabla_productos()
       {
         $("#descripcion").val(valores_productos.descripcion);
         $("#referencia").val(valores_productos.referencia);
+        alert($("#descripcion").val(valores_productos.descripcion));
         $("#precio").val(valores_productos.precio);
       }
     }) 
@@ -129,6 +176,7 @@ function multiplicar_precio_x_cantidad()
     total= precio*cantidad;
     $('#total').val(total);
 }
+
 
 
 </script>
