@@ -59,15 +59,13 @@
 
 <script>
 
-
-  
  const contenedor=document.querySelector('#agregar_fila_dinamica');
- 
  const btnAgregar= document.querySelector('#agregar');
-
  let total=2;
 
  btnAgregar.addEventListener('click', e => {
+  //alert(<label>${total++}</label>);
+  
     let div = document.createElement('div');
     div.innerHTML = `<label>${total++}</label> - 
       <input style="width: 70px"  type="text" REQUIRED name="codigo" placeholder="Codigo..." value="" id="codigo" onblur="buscar_datos_tabla_productos();">
@@ -90,6 +88,7 @@ const eliminar = (e) => {
 const actualizarContador = () => {
     let divs = contenedor.children;
     total = 2;
+    
     for (let i = 0; i < divs.length; i++) {
         divs[i].children[0].innerHTML = total++;
     }//end for
@@ -162,7 +161,7 @@ function buscar_datos_tabla_productos()
       {
         $("#descripcion").val(valores_productos.descripcion);
         $("#referencia").val(valores_productos.referencia);
-        alert($("#descripcion").val(valores_productos.descripcion));
+        //alert($("#descripcion").val(valores_productos.descripcion));
         $("#precio").val(valores_productos.precio);
       }
     }) 
