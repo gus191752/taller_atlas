@@ -22,38 +22,56 @@ if (isset($_POST['buscar_cedula']))
     $valores_trabajadores=json_encode($valores_trabajadores);
     echo $valores_trabajadores;
 }
-
+echo "dentro de php";
+//echo $codigo1;
 /////////////////////////////////////////////////////////////////
 if (isset($_POST['buscar_producto']))
 {
+   
+    $codigo = $_POST['codigo'];
+    $codigo1 = $_POST['codigo1'];
+    $codigo2 = $_POST['codigo2'];
+    $codigo3 = $_POST['codigo3'];
+    $codigo4 = $_POST['codigo4'];
+    $codigo5 = $_POST['codigo5'];  
+
+    /*$codigo ='24628';
+    $codigo4 ='';
+    $codigo1 ='';
+    $codigo2 ='';
+    $codigo3 ='';
+    $codigo5 ='';*/
+
     
-    $codigo = $_POST["codigo"];
-    $codigo1 = $_POST["codigo1"];
-    //$codigo4 = $_POST["codigo4"];
-    
-    $valores_productos[]=array();
-    $codigos[]=array();
+    //$valores_productos[]=array();
 
     $valores_productos['existe_codigo']="0";
 
-    $codigos[]=array();
-    $codigos=['$codigo','$codigo1','$codigo2','$codigo3','$codigo4','$codigo5'];
-
-    $i=3;
-
-    $consulta_codigo=("SELECT * FROM productos WHERE codigo='$codigo1'");
+   
+    $codigos=[$codigo,$codigo1,$codigo2,$codigo3,$codigo4,$codigo5];
+//echo '$codigo1';
+//echo $valores_productos[1];
+    //$i=3;
+    for ($i=0; $i < count($codigos) ; $i++)
+    {
+    $consulta_codigo=("SELECT * FROM productos WHERE codigo='$codigos[$i]'");
     $resultados_productos= mysqli_query($conn_ventas->conectarventas(), $consulta_codigo);
 
+//echo $codigos[$i];
+//echo $i;
+echo count($codigos);
     while($consulta_productos = mysqli_fetch_array($resultados_productos))
         {
             $valores_productos['existe_codigo']="1";
             $valores_productos['descripcion'.$i.'']=$consulta_productos['descripcion'];
-            $valores_productos['referencia1']=$consulta_productos['referencia'];
-            $valores_productos['precio1']=$consulta_productos['precio'];
+            $valores_productos['referencia'.$i.'']=$consulta_productos['referencia'];
+            $valores_productos['precio'.$i.'']=$consulta_productos['precio'];
         }
-   
+    }
+    
     $valores_productos=json_encode($valores_productos);
     echo $valores_productos;
+
 }
 
 /*
