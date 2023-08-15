@@ -30,7 +30,10 @@ if (isset($_POST['buscar_producto']))
     $codigo = $_POST["codigo"];
     $codigo1 = $_POST["codigo1"];
     //$codigo4 = $_POST["codigo4"];
-    //$valores_trabajadores=array();
+    
+    $valores_productos[]=array();
+    $codigos[]=array();
+
     $valores_productos['existe_codigo']="0";
 
     $codigos[]=array();
