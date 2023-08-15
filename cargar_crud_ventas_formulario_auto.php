@@ -36,13 +36,15 @@ if (isset($_POST['buscar_producto']))
     $codigos[]=array();
     $codigos=['$codigo','$codigo1','$codigo2','$codigo3','$codigo4','$codigo5'];
 
+    $i=3;
+
     $consulta_codigo=("SELECT * FROM productos WHERE codigo='$codigo1'");
     $resultados_productos= mysqli_query($conn_ventas->conectarventas(), $consulta_codigo);
 
     while($consulta_productos = mysqli_fetch_array($resultados_productos))
         {
             $valores_productos['existe_codigo']="1";
-            $valores_productos['descripcion']=$consulta_productos['descripcion'];
+            $valores_productos['descripcion'.$i.'']=$consulta_productos['descripcion'];
             $valores_productos['referencia1']=$consulta_productos['referencia'];
             $valores_productos['precio1']=$consulta_productos['precio'];
         }
