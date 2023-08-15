@@ -36,13 +36,14 @@
   <div class="datos_compra">
   <h1>Listado de Repuesto</h1>
       
-    <div  class="accion_compra">
-      
+    <div id="fila_activa" class="accion_compra">
+      <div  id="fila_activa">
       <label>1</label> - <input style="width: 70px"  type="text" REQUIRED name="codigo" placeholder="Codigo..." value="" id="codigo" onblur="buscar_datos_tabla_productos();">
       <input style="width: 400px"type="text"  name="descripcion" placeholder="Descripcion..." value="" id="descripcion">
       <input style="width: 70px" type="text" name="precio" placeholder="Precio..." value="" id="precio">
       <input style="width: 70px" type="text" name="cantidad" placeholder="Cantidad..." value="" id="cantidad" onblur="multiplicar_precio_x_cantidad();">
       <input style="width: 70px" type="text" name="total" placeholder="Total..." value="" id="total">        
+      </div>
       <div id="agregar_fila_dinamica"></div>
       
     </div>
@@ -61,20 +62,22 @@
 
  const contenedor=document.querySelector('#agregar_fila_dinamica');
  const btnAgregar= document.querySelector('#agregar');
- let total=0;
+ let total=2;
 
  btnAgregar.addEventListener('click', e => {
   //alert(<label>${total++}</label>);
-  
+  i++;
     let div = document.createElement('div');
     div.innerHTML = `<label>${total++}</label> - 
-      <input style="width: 70px"  type="text" REQUIRED name="codigo" placeholder="Codigo..." value="" id="codigo${total}" onblur="buscar_datos_tabla_productos();">
-      <input style="width: 400px"type="text"  name="descripcion" placeholder="Descripcion..." value="" id="descripcion${total}">
-      <input style="width: 70px" type="text" name="precio" placeholder="Precio..." value="" id="precio${total}">
+    <div  id="fila_activa'+i+'">
+      <label>1</label> - <input style="width: 70px"  type="text" REQUIRED name="codigo" placeholder="Codigo..." value="" id="codigo" onblur="buscar_datos_tabla_productos();">
+      <input style="width: 400px"type="text"  name="descripcion" placeholder="Descripcion..." value="" id="descripcion">
+      <input style="width: 70px" type="text" name="precio" placeholder="Precio..." value="" id="precio">
       <input style="width: 70px" type="text" name="cantidad" placeholder="Cantidad..." value="" id="cantidad" onblur="multiplicar_precio_x_cantidad();">
-      <input style="width: 70px" type="text" name="total" placeholder="Total..." value="" id="total"><button onclick="eliminar(this)">Eliminar</button>`;
+      <input style="width: 70px" type="text" name="total" placeholder="Total..." value="" id="total">        
+    </div>`;
     contenedor.appendChild(div);
-    console.log(div);
+    
 })
 
 //@param {this} e 
@@ -87,12 +90,18 @@ const eliminar = (e) => {
 
 const actualizarContador = () => {
     let divs = contenedor.children;
-    total = 0;
+    total = 2;
     
     for (let i = 0; i < divs.length; i++) {
         divs[i].children[0].innerHTML = total++;
     }//end for
 };
+
+
+
+
+
+
 
    function buscar_datos_tabla_trabajadores()
 {
@@ -124,20 +133,13 @@ const actualizarContador = () => {
         $("#vendedor").val(valores_trabajadores.nombre_trabajador);
       }
     }) 
-    
 } 
-
 function buscar_datos_tabla_productos()
 {
     var parametros = 
     {
       "buscar_producto": "1",
-      "codigo" : $("#codigo").val(),
-      "codigo1" : $("#codigo1").val(),
-      "codigo2" : $("#codigo2").val(),
-      "codigo3" : $("#codigo3").val(),
-      "codigo4" : $("#codigo4").val(),
-      "codigo5" : $("#codigo5").val()
+      "codigo" : $("#codigo").val()
     };
     $.ajax(
     {
@@ -162,35 +164,11 @@ function buscar_datos_tabla_productos()
       {
         $("#descripcion").val(valores_productos.descripcion);
         $("#referencia").val(valores_productos.referencia);
+        //alert($("#descripcion").val(valores_productos.descripcion));
         $("#precio").val(valores_productos.precio);
-        $("#descripcion1").val(valores_productos.descripcion1);
-        $("#referencia1").val(valores_productos.referencia1);
-        $("#precio1").val(valores_productos.precio1);
-        $("#descripcion2").val(valores_productos.descripcion2);
-        $("#referencia2").val(valores_productos.referencia2);
-        $("#precio2").val(valores_productos.precio2);
-        $("#descripcion3").val(valores_productos.descripcion3);
-        $("#referencia3").val(valores_productos.referencia3);
-        $("#precio3").val(valores_productos.precio3);
-        $("#descripcion4").val(valores_productos.descripcion4);
-        $("#referencia4").val(valores_productos.referencia4);
-        $("#precio4").val(valores_productos.precio4);
-        $("#descripcion5").val(valores_productos.descripcion5);
-        $("#referencia5").val(valores_productos.referencia5);
-        $("#precio5").val(valores_productos.precio5);
-
       }
     }) 
-    console.log($("#codigo").val());
-    console.log($("#codigo1").val());
-    console.log($("#codigo2").val());
-    console.log($("#codigo3").val());
-    console.log($("#codigo4").val());
-    console.log($("#codigo5").val());
-    
 } 
-///////////////////////////////////////////////
-////////////////////////////////////////////////
 
 function multiplicar_precio_x_cantidad()
 {
