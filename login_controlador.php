@@ -20,7 +20,7 @@ if(!empty($_POST['btningresar']))
                     $_SESSION['apellido']=$datos->apellido;
                     $_SESSION['jerarquia']=$datos->jerarquia;
                     
-                    if ($_SESSION['jerarquia']='9')
+                    if ($_SESSION['jerarquia']=='9')
                         {
                         header('location:administrador.html');
                         }
