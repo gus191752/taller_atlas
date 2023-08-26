@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 include('conexion_usuarios.php');
 
 if(!empty($_POST['btningresar']))
@@ -13,7 +15,20 @@ if(!empty($_POST['btningresar']))
         
             if ($datos=$query->fetch_object())
                 {
-                    header('location:mostrar_crud_taller_ajax.php');
+                    $_SESSION['id']=$datos->id;
+                    $_SESSION['nombre']=$datos->nombre;
+                    $_SESSION['apellido']=$datos->apellido;
+                    $_SESSION['jerarquia']=$datos->jerarquia;
+                    
+                    if ($_SESSION['jerarquia']='9')
+                        {
+                        header('location:administrador.html');
+                        }
+                    else
+                        {
+                        header('location:mostrar_crud_taller_ajax.php');
+                        }    
+                    
                 }
             else
                 {
