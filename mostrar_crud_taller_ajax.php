@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="ES">
 <head>
@@ -8,6 +13,11 @@
 </head>
 <body>
     <h1>Mostrar sistema de trabajo con Ajax</h1>
+    <?php
+    
+    echo ("<div>Bienvenido") ." ".$_SESSION['nombre']." ".$_SESSION['apellido'].("</div>");
+    echo "<br>";
+    ?>
     <div>
 
         <form action="" method="POST" >

@@ -15,7 +15,7 @@ if(!empty($_POST['btningresar']))
         
             if ($datos=$query->fetch_object())
                 {
-                    $_SESSION['id']=$datos->id;
+                    $_SESSION['cedula_usuario']=$datos->cedula_usuario;
                     $_SESSION['nombre']=$datos->nombre;
                     $_SESSION['apellido']=$datos->apellido;
                     $_SESSION['jerarquia']=$datos->jerarquia;
