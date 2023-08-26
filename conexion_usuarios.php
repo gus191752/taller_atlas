@@ -1,29 +1,29 @@
 <?php
 
-class conexion_db_carrito
+class conexion_db_usuarios
 {
 	const user='root';
 	const pass='';
-	const db='carrito';
+	const db='basedatos';
 	const servidor='localhost';
 
-	public function conectarcarrito()
+	public function conectar_usuarios()
 	{
-		$conectar = new mysqli(self::servidor,self::user,self::pass,self::db);
+		$conectar_usuarios = new mysqli(self::servidor,self::user,self::pass,self::db);
 
-		if ($conectar->connect_errno)
+		if ($conectar_usuarios->connect_errno)
 		{
-			die("error en la conexion".$conectar->connect_error);
+			die("error en la conexion".$conectar_usuarios->connect_error);
 			echo"no conectado";
 		}
-		if ($conectar)
+		if ($conectar_usuarios)
 		{ 
 			
 			//echo"datos guardados";
 			//header("location:mostrarconajax.php");
 		}
 
-		return $conectar;
+		return $conectar_usuarios;
 	}
 }
 

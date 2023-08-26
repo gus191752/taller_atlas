@@ -20,6 +20,9 @@
          <form method="post" action="">
             <img height="50px" width="50px" src="imagenes/vehiculo.png">
             <h2 class="title">BIENVENIDO</h2>
+            <?php
+            include('login_controlador.php');
+            ?>
             <div class="input-div one">
                <div class="i">
                   <i class="fas fa-user"></i>
