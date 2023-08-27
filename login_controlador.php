@@ -26,7 +26,7 @@ if(!empty($_POST['btningresar']))
                         }
                     else
                         {
-                        header('location:mostrar_crud_taller_ajax.php');
+                        header('location:mostrar_crud_taller_ajax_publico.php');
                         }    
                     
                 }

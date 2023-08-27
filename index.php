@@ -34,7 +34,7 @@ if (empty($_SESSION['cedula_usuario']))
 					<li class="contenedor-menu-item"><a href="#ubicanos" class="contenedor-menu-link contenedor-link">Ubicanos</a></li>
 					<li class="contenedor-menu-item"><a href="mostrar_crud_conajax_productos_publico.php" class="contenedor-menu-link contenedor-link">Productos y Servicios</a></li>
 					<li class="contenedor-menu-item"><a href="#informacion" class="contenedor-menu-link contenedor-link">Informacion Tecnica</a></li>
-					<li class="contenedor-menu-item"><a href="mostrar_crud_taller_ajax.php" class="contenedor-menu-link contenedor-link">Bitacora de Mtto</a></li>
+					<li class="contenedor-menu-item"><a href="mostrar_crud_taller_ajax_publico.php" class="contenedor-menu-link contenedor-link">Bitacora de Mtto</a></li>
 					<?php 
                     if (empty($_SESSION['cedula_usuario'])){
                     echo '<li class="contenedor-menu-item"><a href="login.php" class="contenedor-menu-link contenedor-link ">Abrir Sesion</a></li>';  
