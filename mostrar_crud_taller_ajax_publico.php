@@ -31,31 +31,19 @@ if (empty($_SESSION['cedula_usuario']))
 
         <table border="2px " >
             <thead>
-
-                <tr>
-                    <th colspan="5"><a href="cargar_crud_taller.php">Nuevo Trabajo</a></th>
-                </tr>
-                <tr>
-                    <th colspan="5"><a href="mostrarconajax_rendimiento_trabajador.php">Rendimiento_trabajador</a></th>
-                </tr>
                 <tr>
                     <th colspan="5"><a href="administrador.php">Volver al Inicio</a></th>
                 </tr>
                 <tr>                    
-                    <th>id_trabajo</th>
-                    <th>cedula_cliente</th>
+                    
                     <th>Placas</th>
-                    <th>VIN</th>
-                    <th>Modelo y/o Marca</th>
                     <th>Kilometraje</th> 
-                    <th>cedula_trabajador</th>                
-                    <th>titulo_trabajo</th>
+                    <th>cedula_trabajador</th>              
                     <th>descripcion_falla</th>
                     <th>diagnostico y/0 Solucion</th>
                     <th>inspeccion final</th>
-                    <th>fecha_ingreso</th> 
                     <th>fecha_egreso</th>                
-                    <th>costo_reparacion</th>
+                    
                 </tr>
             </thead>
             <tbody id="contenido" ></tbody>
