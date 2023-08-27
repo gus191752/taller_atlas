@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ($_SESSION['jerarquia']!='9')
+{
+    header('location:index.html');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

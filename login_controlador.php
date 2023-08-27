@@ -22,7 +22,7 @@ if(!empty($_POST['btningresar']))
                     
                     if ($_SESSION['jerarquia']=='9')
                         {
-                        header('location:administrador.html');
+                        header('location:administrador.php');
                         }
                     else
                         {

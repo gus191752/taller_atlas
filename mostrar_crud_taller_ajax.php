@@ -1,6 +1,9 @@
 <?php
 session_start();
-
+if (empty($_SESSION['cedula_usuario']))
+{
+    header('location:login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +39,7 @@ session_start();
                     <th colspan="5"><a href="mostrarconajax_rendimiento_trabajador.php">Rendimiento_trabajador</a></th>
                 </tr>
                 <tr>
-                    <th colspan="5"><a href="administrador.html">Volver al Inicio</a></th>
+                    <th colspan="5"><a href="administrador.php">Volver al Inicio</a></th>
                 </tr>
                 <tr>                    
                     <th>id_trabajo</th>
