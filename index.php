@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (empty($_SESSION['cedula_usuario']))
+{
+   // header('location:login.php');
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,9 +34,19 @@
 					<li class="contenedor-menu-item"><a href="#ubicanos" class="contenedor-menu-link contenedor-link">Ubicanos</a></li>
 					<li class="contenedor-menu-item"><a href="mostrar_crud_conajax_productos_publico.php" class="contenedor-menu-link contenedor-link">Productos y Servicios</a></li>
 					<li class="contenedor-menu-item"><a href="#informacion" class="contenedor-menu-link contenedor-link">Informacion Tecnica</a></li>
-					<li class="contenedor-menu-item"><a href="#bitacora" class="contenedor-menu-link contenedor-link">Bitacora de Mtto</a></li>
-					<li class="contenedor-menu-item"><a href="#contacto" class="contenedor-menu-link contenedor-link ">Contactanos</a></li>
-				</ul>
+					<li class="contenedor-menu-item"><a href="mostrar_crud_taller_ajax.php" class="contenedor-menu-link contenedor-link">Bitacora de Mtto</a></li>
+					<?php 
+                    if (empty($_SESSION['cedula_usuario'])){
+                    echo '<li class="contenedor-menu-item"><a href="login.php" class="contenedor-menu-link contenedor-link ">Abrir Sesion</a></li>';  
+                    
+                    }
+                    else
+                    {
+                    echo '<li class="contenedor-menu-item"><a href="login_cerrar_sesion.php" class="contenedor-menu-link contenedor-link ">Cerrar Sesion</a></li>';
+                    
+                    }
+                    ?>
+                    </ul>
 		</nav>
 	</header>
     

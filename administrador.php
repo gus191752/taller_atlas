@@ -2,7 +2,7 @@
 session_start();
 if ($_SESSION['jerarquia']!='9')
 {
-    header('location:index.html');
+    header('location:index.php');
 }
 ?>
 
@@ -33,8 +33,16 @@ if ($_SESSION['jerarquia']!='9')
 					<li class="contenedor-menu-item"><a href="#productos" class="contenedor-menu-link contenedor-link">Productos y Servicios</a></li>
 					<li class="contenedor-menu-item"><a href="#informacion" class="contenedor-menu-link contenedor-link">Informacion Tecnica</a></li>
 					<li class="contenedor-menu-item"><a href="#bitacora" class="contenedor-menu-link contenedor-link">Bitacora de Mtto</a></li>
-					<li class="contenedor-menu-item"><a href="#contacto" class="contenedor-menu-link contenedor-link ">Contactanos</a></li>
-				</ul>
+					<?php 
+                    if ($_SESSION['jerarquia']=='9'){
+                    echo '<li class="contenedor-menu-item"><a href="login_cerrar_sesion.php" class="contenedor-menu-link contenedor-link ">Cerrar Sesion</a></li>';
+                    }
+                    else
+                    {
+                    echo '<li class="contenedor-menu-item"><a href="login.php" class="contenedor-menu-link contenedor-link ">Abrir Sesion</a></li>';  
+                    }
+                    ?>
+                </ul>
 		</nav>
 	</header>
     
