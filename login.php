@@ -50,6 +50,7 @@
                <a class="font-italic isai5" href="">Registrarse</a>
             </div>
             <input name="btningresar" class="btn" type="submit" value="INICIAR SESION">
+            <a class="font-italic isai5" href="index.php">Volver al Inicio</a>
          </form>
       </div>
    </div>

@@ -24,7 +24,7 @@
 
                 </tr>
                 <tr>
-                <th colspan="5"><a href="administrador.html">Volver al Administrador</a></th>
+                <th colspan="5"><a href="administrador.php">Volver al Administrador</a></th>
                 </tr>
                 <tr>                    
                     <th>Cedula</th>

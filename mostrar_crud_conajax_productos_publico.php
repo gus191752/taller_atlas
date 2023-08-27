@@ -42,7 +42,7 @@
     <input type="text" name="campo" id="campo" placeholder="Ingresa aqui tu busqueda..." value="">
     
 </form>
-<a href="index.html">Vover al Inicio</a>
+<a href="index.php">Vover al Inicio</a>
 <table border="2px " >
     <thead>
         <tr>                    
