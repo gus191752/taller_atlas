@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 $columnas=['id_trabajo', 'cedula_cliente', 'placas', 'vin', 'modelo_marca', 'kilometraje', 'cedula_trabajador', 'titulo_trabajo','descripcion_falla','diagnostico_solucion','inspeccion_final','fecha_ingreso','fecha_egreso','costo_reparacion'];
 
 $tabla="registro_trabajos_taller";
