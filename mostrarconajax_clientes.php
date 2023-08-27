@@ -23,8 +23,8 @@
                     <th colspan="5"><a href="cargar_crud_cartera_clientes.php">Nuevo Cliente</a></th>
                 </tr>
                 <tr>
-                    <th colspan="5"><a href="administrador.html">Volver al Administrador</a></th>
-                </tr>
+                    <th colspan="5"><a href="administrador.php">Volver al Administrador</a></th>
+                </tr>   
                 <tr>                    
                     <th>Cedula</th>
                     <th>Nombre</th>
