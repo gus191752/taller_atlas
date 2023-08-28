@@ -38,7 +38,7 @@
                </div>
                <div class="div">
                   <h5>Contraseña</h5>
-                  <input type="password" id="input" class="input" name="password">
+                  <input type="password" id="input" class="input" name="clave">
                </div>
             </div>
             <div class="view">
@@ -47,7 +47,7 @@
 
             <div class="text-center">
                <a class="font-italic isai5" href="">Olvidé mi contraseña</a>
-               <a class="font-italic isai5" href="">Registrarse</a>
+               <a class="font-italic isai5" href="cargar_crud_usuarios.php">Registrarse</a>
             </div>
             <input name="btningresar" class="btn" type="submit" value="INICIAR SESION">
             <a class="font-italic isai5" href="index.php">Volver al Inicio</a>

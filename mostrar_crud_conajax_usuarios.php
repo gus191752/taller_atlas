@@ -20,18 +20,22 @@
             <thead>
 
                 <tr>
-                    <th colspan="5"><a href="cargar_crud_cartera_productos.php">Nuevo Producto</a></th>
+                    <th colspan="5"><a href="cargar_crud_usuarios.php">Nuevo Usuario</a></th>
+                    
                 </tr>
-                <tr>                    
-                    <th>Codigo</th>
-                    <th>Descripcion</th>
-                    <th>Marca</th>
-                    <th>Modelo</th>
-                    <th>Tipo</th>
-                    <th>Año</th> 
-                    <th>Imagen1</th>                
-                    <th>Cantidad</th>
-                    <th>Precio</th>
+                <tr>
+                    <th colspan="5"><a href="administrador.php">Volver al Inicio</a></th>
+                </tr>
+                <tr>
+                    
+                    <th>jerarquia</th>                    
+                    <th>Correo</th>
+                    <th>Cedula</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Usuario</th>
+                    <th>Password</th> 
+                    <th>Telefono</th>                
                 </tr>
             </thead>
             <tbody id="contenido" ></tbody>
@@ -47,7 +51,7 @@
                     let input= document.getElementById("campo").value
                     console.log(input)
                     let contenido= document.getElementById("contenido")
-                    let url = 'load.php'
+                    let url = 'load_crud_usuarios.php'
                     let formulario = new FormData()
                     formulario.append('campo', input)
 

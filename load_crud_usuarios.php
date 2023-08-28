@@ -1,8 +1,8 @@
 <?php 
 
-$columnas=['codigo', 'descripcion', 'marca', 'modelo', 'tipo', 'fecha_fabricacion', 'imagen1', 'imagen2', 'precio', 'cantidad'];
+$columnas=[ 'jerarquia' ,'correo', 'cedula_usuario', 'nombre', 'apellido', 'usuario', 'clave', 'telefono'];
 
-$tabla="productos";
+$tabla="registro_usuarios";
 
 $campo = isset($_POST['campo']) ? $_POST['campo'] : $campo= "" ; //$campo = $_POST['campo'] ; // el error variable indefinida bloquea los datos json
 //$campo='zzz'; //prueba para probar la peticion
@@ -15,18 +15,19 @@ if ($campo != null)
 		$contador_columnas=(count($columnas));
 		for ($i = 0; $i < $contador_columnas; $i++)
 			{
-			$peticion_where .= $columnas[$i] . " LIKE '%" . $campo . "%' OR ";
+			$peticion_where .= $columnas[$i] . " LIKE '%" . $campo_trabajador . "%' OR ";
 			}
 		$peticion_where = substr_replace($peticion_where, "", -3);
 		$peticion_where .= ")"; 
 	}
 		
-$query = "SELECT " . implode(", ", $columnas) . " FROM $tabla $peticion_where " ; //OJO
-//echo $query;
-//exit;  // corta el bucle para ver la peticion
-$conexion= new mysqli('localhost','root','','basedatos');
-$resultado=$conexion->query($query);
-$numeros_columnas = $resultado->num_rows;
+	$query = "SELECT " . implode(", ", $columnas) . " FROM $tabla $peticion_where " ; //OJO
+	//echo $query;
+	//exit;  // corta el bucle para ver la peticion
+	$conexion= new mysqli('localhost','root','','basedatos');
+	$resultado=$conexion->query($query);
+	$numeros_columnas = $resultado->num_rows;
+	
 
 $html='';
 
@@ -35,19 +36,16 @@ if ($numeros_columnas>0)
 	while($row = $resultado->fetch_assoc())
 		{
 		$html .= '<tr>';
-		$html .= '<td>' . $row['codigo'] . '</td>';
-		$html .= '<td>' . $row['descripcion'] . '</td>';
-		$html .= '<td>' . $row['marca'] . '</td>';
-		$html .= '<td>' . $row['modelo'] . '</td>';
-		$html .= '<td>' . $row['tipo'] . '</td>';
-		$html .= '<td>' . $row['fecha_fabricacion'] . '</td>';
-		//$html .= '<td>' . $row['imagen1'] . '</td>';
-		$html .= '<td>'.'<img height="70px" src="data:image/jpg;base64,base64_encode(' .$row['codigo'] . ')">'.'</td>';  // hay q resolver este punto
-		 
-		$html .= '<td>' . $row['cantidad'] . '</td>';
-		$html .= '<td>' . $row['precio'] . '</td>';
-		$html .= '<th><a href="modificar_crud_cartera_productos.php?codigo=' . $row['codigo'] . '">Modificar</a></th>';
-		$html .= '<th><a href="proceso_eliminar_crud_cartera_productos.php?codigo=' . $row['codigo'] . '">Eliminar</a></th>';
+		$html .= '<td>' . $row['jerarquia'] . '</td>';
+		$html .= '<td>' . $row['correo'] . '</td>';
+		$html .= '<td>' . $row['cedula_usuario'] . '</td>';
+		$html .= '<td>' . $row['nombre'] . '</td>';
+		$html .= '<td>' . $row['apellido'] . '</td>';
+		$html .= '<td>' . $row['usuario'] . '</td>';
+		$html .= '<td>' . $row['clave'] . '</td>';
+		$html .= '<td>' . $row['telefono'] . '</td>';
+		$html .= '<th><a href="modificar_crud_usuarios.php?cedula_usuario=' . $row['cedula_usuario'] . '">Modificar</a></th>';
+		$html .= '<th><a href="proceso_eliminar_crud_usuarios.php?cedula_usuario=' . $row['cedula_usuario'] . '">Eliminar</a></th>';
 		$html .= '</tr>';
 
 		}

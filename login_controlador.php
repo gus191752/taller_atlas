@@ -5,12 +5,13 @@ include('conexion_usuarios.php');
 
 if(!empty($_POST['btningresar']))
 {
-    if ((!empty($_POST['usuario'])) and (!empty($_POST['password'])))
+    if ((!empty($_POST['usuario'])) and (!empty($_POST['clave'])))
     {
         $usuario=$_POST['usuario'];
-        $password=$_POST['password'];
+        $clave=$_POST['clave'];
         $conn_usuarios = new conexion_db_usuarios(); 
-        $consulta_select_usuarios = "SELECT * FROM registro_usuarios WHERE usuario='$usuario' and password='$password' "  ;                    
+        $consulta_select_usuarios = "SELECT * FROM registro_usuarios WHERE usuario='$usuario' and clave='$clave' "  ;                    
+        //echo $consulta_select_usuarios;
         $query = mysqli_query($conn_usuarios->conectar_usuarios(),$consulta_select_usuarios);
         
             if ($datos=$query->fetch_object())
