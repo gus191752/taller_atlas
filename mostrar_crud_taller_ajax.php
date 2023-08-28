@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (empty($_SESSION['cedula_usuario']))
+if ($_SESSION['jerarquia']!='9')
 {
-    header('location:login.php');
+    header('location:index.php');
 }
 ?>
 

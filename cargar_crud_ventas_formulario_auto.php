@@ -1,5 +1,13 @@
 <?php
 
+
+session_start();
+if ($_SESSION['jerarquia']!='9')
+{
+    header('location:index.php');
+}
+
+
 include('conexion_db_ventas.php');  //llama al archivo conexion.php
 $conn_ventas = new conexion_db_ventas();  
 
