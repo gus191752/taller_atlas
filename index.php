@@ -33,7 +33,7 @@ if (empty($_SESSION['cedula_usuario']))
 				<ul class="contenedor-menu">
 					<li class="contenedor-menu-item"><a href="#ubicanos" class="contenedor-menu-link contenedor-link">Ubicanos</a></li>
 					<li class="contenedor-menu-item"><a href="mostrar_crud_conajax_productos_publico.php" class="contenedor-menu-link contenedor-link">Productos y Servicios</a></li>
-					<li class="contenedor-menu-item"><a href="#informacion" class="contenedor-menu-link contenedor-link">Informacion Tecnica</a></li>
+					<li class="contenedor-menu-item"><a href="informacion_tecnica.php" class="contenedor-menu-link contenedor-link">Informacion Tecnica</a></li>
 					<li class="contenedor-menu-item"><a href="mostrar_crud_taller_ajax_publico.php" class="contenedor-menu-link contenedor-link">Bitacora de Mtto</a></li>
 					<?php 
                     if (empty($_SESSION['cedula_usuario'])){

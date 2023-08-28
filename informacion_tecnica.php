@@ -1,10 +1,3 @@
-<?php
-session_start();
-if (empty($_SESSION['cedula_usuario']))
-{
-    header('location:login.php');
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,74 +40,34 @@ if (empty($_SESSION['cedula_usuario']))
                     </ul>
 		</nav>
 	</header>
-
+    
     <div align="left" class="membrete">
         <h1 >Taller Atlas </h1>
         <br>
+        <h1>Te obsequia los siguientes libros</h1>
+        <br>
         <h2>Su taller de Confianza!!!</h2>
+        <br>
+        
+<a href="https://drive.google.com/file/d/1C_88V15ihVSqPeifIkxP7U4QPk5f3pqa/view?usp=drive_link">1.  10 PASOS PARA REPARAR UN AUTO QUE NO ENCIENDE</a>
+<br>
+<a href="https://drive.google.com/file/d/1CcWRF12DJcyj47ibmw3goxBWwnxFEJQW/view?usp=drive_link">2.  DIAGNOSTICO AUTOMOTRIZ CON OSCILOSCOPIO</a>
+<br>
+<br>
+<br>
+<a href="index.php">Volver al Inicio</a>
+<br>
     </div>
-
-
-    <h1>Bitacora de Mantenimiento</h1>
-    <?php
     
-    echo ("<div>Bienvenido") ." ".$_SESSION['nombre']." ".$_SESSION['apellido'].("</div>");
-    echo "<br>";
-    ?>
-    <div>
 
-        <form action="" method="POST" >
-            <label for="campo_taller"  >Buscar: </label>
-            <input type="text" name="campo_taller" id="campo_taller">
+    <footer class="footer" id="contacto">
+        <h4>Soluciones gm 83 c.a.</h4>
+        <h4>Rif J-50411101-5</h4>
+        <h4>Centro Comercial La Romana local B4, av Miranda c/c av ayacucho, Maracay</h4>
+        <h4>tlf: 0412-147.19.97</h4>
+        <h4>Correo: talleratlasmcy@gmail.com</h4>
+        <h4>Instagram: @talleratlasmcy</h4>
+    </footer>
 
-        </form>
-
-        <table border="2px " >
-            <thead>
-                <tr>
-                    <th colspan="5"><a href="administrador.php">Volver al Inicio</a></th>
-                </tr>
-                <tr>                    
-                    
-                    <th>Placas</th>
-                    <th>Kilometraje</th> 
-                    <th>cedula_trabajador</th>              
-                    <th>descripcion_falla</th>
-                    <th>diagnostico y/0 Solucion</th>
-                    <th>inspeccion final</th>
-                    <th>fecha_egreso</th>                
-                    
-                </tr>
-            </thead>
-            <tbody id="contenido" ></tbody>
-        </table>
-
-        <script >
-
-                getData()
-
-                document.getElementById("campo_taller").addEventListener("keyup",getData)
-                function getData()
-                {
-                    let input= document.getElementById("campo_taller").value
-                    console.log(input)
-                    let contenido= document.getElementById("contenido")
-                    let url = 'load_crud_taller_ajax_publico.php'
-                    let formulario = new FormData()
-                    formulario.append('campo_taller', input)
-
-                    fetch (url , {
-                        method: "POST",
-                        body: formulario                        
-                        }).then(response => response.json())
-                    .then(data => {contenido.innerHTML = data
-                    console.log("activa el fetch") })
-                    .catch(err => console.log(err))
-
-                }
-
-        </script>
-
-    </div>
 </body>
 </html>
