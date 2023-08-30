@@ -22,6 +22,7 @@
             <h2 class="title">BIENVENIDO</h2>
             <?php
             include('login_controlador.php');
+            //include ('proceso_insertar_crud_usuarios_publico.php');
             ?>
             <div class="input-div one">
                <div class="i">

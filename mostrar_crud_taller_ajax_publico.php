@@ -18,6 +18,7 @@ if (empty($_SESSION['cedula_usuario']))
     href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
     />
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos_tabla.css">
 	<script src="https://kit.fontawesome.com/779ae99c75.js" crossorigin="anonymous"></script>
 	<script defer src="js/animacion.js"></script>
 </head>
