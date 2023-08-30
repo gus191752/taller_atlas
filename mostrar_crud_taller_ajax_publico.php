@@ -69,12 +69,10 @@ if (empty($_SESSION['cedula_usuario']))
             <input type="text" name="campo_taller" id="campo_taller">
 
         </form>
-
+        <a href="administrador.php">Volver al Inicio</a>
         <table border="2px " >
             <thead>
-                <tr>
-                    <th colspan="5"><a href="administrador.php">Volver al Inicio</a></th>
-                </tr>
+                
                 <tr>                    
                     
                     <th>Placas</th>
