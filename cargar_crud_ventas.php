@@ -19,6 +19,7 @@ if ($_SESSION['jerarquia']!='9')
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script defer src="js/funciones.js" ></script>
     <link rel="stylesheet" type="text/css" href="css/estilos_venta.css">
     <link rel="stylesheet" type="text/css" href="css/estilos_tabla.css">
 </head>
@@ -62,24 +63,33 @@ if ($_SESSION['jerarquia']!='9')
           <th>Accion</th>
         </tr>
         <tr>
+        <form action="" method="POST" >
+            <label for="campo"  >Buscar: </label>
+            <input type="text" name="campo" id="campo">
+      </form>
         <?php
+
+        
+
         include('conexion.php');
         $conn = new conexion_db_carrito(); 
-        $codigo= $_REQUEST['codigo'];                        
+        $codigo= $_REQUEST['codigo']; 
+
+        //$codigo = isset($_POST['codigo']) ? $_POST['codigo'] : $codigo= "" ;
+
         $consulta_select = "SELECT * FROM productos WHERE codigo='$codigo'"  ;                    
         $query = mysqli_query($conn->conectarcarrito(),$consulta_select);
         $row = mysqli_fetch_object($query);
         {               
         ?>
-        <form action="proceso_modificar_crud_cartera_productos.php?codigo= <?php echo $row->codigo; ?>" method="POST" enctype="multipart/form-data"></td>
-        <td id="texto_codigo_producto"><input type="text" REQUIRED name="codigo" placeholder="Codigo..." value="<?php echo $row->codigo; ?>"></td>
-        <td id="texto_referencia"><input type="text" REQUIRED name="referencia" placeholder="Referencia..." value="<?php echo $row->referencia; ?>"></td>
-        <td id="texto_descripcion"><input type="text" REQUIRED name="descripcion" placeholder="Descripcion Producto..." value="<?php echo $row->descripcion; ?>"></td>
-        <td id="texto_precio"><input type="text" name="precio" placeholder="Precio..." value="<?php echo $row->precio;?>"></td>
-        <td id="texto_existencia"><input type="text" name="cantidad" placeholder="Cantidad..." value="<?php echo $row->cantidad;?>"></td>
-        <td id="texto_marca"><input type="text" name="marca" placeholder="Marca..." value="<?php echo $row->marca;?>"></td>
-        <td id="texto_cantidad_producto"><input type="text" name="texto_cantidad_producto" placeholder="Marca..." value="<?php echo $row->marca;?>"></td>
-        <td id="precio_total"><input type="text" name="precio_total" placeholder="Marca..." value="<?php echo $row->marca;?>"></td>
+        <td ><input id="texto_codigo_producto" type="text" REQUIRED name="codigo" placeholder="Codigo..." value="<?php echo $row->codigo; ?>"></td>
+        <td ><input id="texto_referencia" type="text" REQUIRED name="referencia" placeholder="Referencia..." value="<?php echo $row->referencia; ?>"></td>
+        <td ><input id="texto_descripcion" type="text" REQUIRED name="descripcion" placeholder="Descripcion Producto..." value="<?php echo $row->descripcion; ?>"></td>
+        <td ><input id="texto_precio" type="text" name="text_precio" placeholder="Precio..." value="<?php echo $row->precio;?>"></td>
+        <td ><input id="texto_existencia" type="text" name="texto_existencia" placeholder="Cantidad..." value="<?php echo $row->cantidad;?>"></td>
+        <td ><input id="texto_marca" type="text" name="marca" placeholder="Marca..." value="<?php echo $row->marca;?>"></td>
+        <td ><input id="texto_cantidad_producto" type="text" name="texto_cantidad_producto" placeholder="Cantidad..." value=""></td>
+        <td ><input id="texto_precio_total" type="text" name="texto_precio_total" placeholder="Total..." value=""></td>
         <td><a href="a" id="add_productos_venta">Agregar</a></td>         
                 
                 <?php
@@ -126,10 +136,7 @@ if ($_SESSION['jerarquia']!='9')
 
 
      
-      <form action="" method="POST" >
-            <label for="campo"  >Buscar: </label>
-            <input type="text" name="campo" id="campo">
-      </form>
+      
       
     </table>
     
@@ -155,7 +162,7 @@ if ($_SESSION['jerarquia']!='9')
     </script>
   </section>
     <br>
-    <a href="administrador.html">Volver</a>
+    <a href="administrador.php">Volver</a>
 <br>
 
 </body>
