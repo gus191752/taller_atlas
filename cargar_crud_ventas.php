@@ -75,14 +75,15 @@ if ($_SESSION['jerarquia']!='9')
         $conn = new conexion_db_carrito(); 
         //$codigo= $_REQUEST['codigo']; 
         $codigo = isset($_REQUEST['codigo']) ? $_REQUEST['codigo'] : $codigo= "" ;
-
+        //$referencia = isset($_REQUEST['referencia']) ? $_REQUEST['referencia'] : $referencia= "" ;
+        
         $consulta_select = "SELECT * FROM productos WHERE codigo='$codigo'"  ;                    
         $query = mysqli_query($conn->conectarcarrito(),$consulta_select);
         $row = mysqli_fetch_object($query);
         {               
         ?>
-        <td ><input id="texto_codigo_producto" type="text" REQUIRED name="codigo" placeholder="Codigo..." value="<?php echo $row->codigo; ?>"></td>
-        <td ><input id="texto_referencia" type="text" REQUIRED name="referencia" placeholder="Referencia..." value="<?php echo $row->referencia; ?>"></td>
+        <td ><input id="texto_codigo_producto" type="text" REQUIRED name="codigo" placeholder="Codigo..." value="<?php if (($codigo)=='') {} else { echo $row->codigo; }?>"></td>
+        <td ><input id="texto_referencia" type="text" REQUIRED name="referencia" placeholder="Referencia..." value="<?php  { echo $row->referencia; }  ?>"></td>
         <td ><input id="texto_descripcion" type="text" REQUIRED name="descripcion" placeholder="Descripcion Producto..." value="<?php echo $row->descripcion; ?>"></td>
         <td ><input id="texto_precio" type="text" name="text_precio" placeholder="Precio..." value="<?php echo $row->precio;?>"></td>
         <td ><input id="texto_existencia" type="text" name="texto_existencia" placeholder="Cantidad..." value="<?php echo $row->cantidad;?>"></td>
