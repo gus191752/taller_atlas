@@ -73,9 +73,8 @@ if ($_SESSION['jerarquia']!='9')
 
         include('conexion.php');
         $conn = new conexion_db_carrito(); 
-        $codigo= $_REQUEST['codigo']; 
-
-        //$codigo = isset($_POST['codigo']) ? $_POST['codigo'] : $codigo= "" ;
+        //$codigo= $_REQUEST['codigo']; 
+        $codigo = isset($_REQUEST['codigo']) ? $_REQUEST['codigo'] : $codigo= "" ;
 
         $consulta_select = "SELECT * FROM productos WHERE codigo='$codigo'"  ;                    
         $query = mysqli_query($conn->conectarcarrito(),$consulta_select);
