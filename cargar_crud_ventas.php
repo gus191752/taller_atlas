@@ -20,6 +20,7 @@ if ($_SESSION['jerarquia']!='9')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/estilos_venta.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos_tabla.css">
 </head>
 
 <body>
@@ -42,175 +43,118 @@ if ($_SESSION['jerarquia']!='9')
 
 
   <div class="datos_compra">
-  <h1>Listado de Repuesto</h1>
+  <h1>Detalle de la Compra</h1>
       
-    <div  class="accion_compra">
-      
-      <label>1</label> - <input style="width: 70px"  type="text" REQUIRED name="codigo" placeholder="Codigo..." value="" id="codigo" onblur="buscar_datos_tabla_productos();">
-      <input style="width: 400px"type="text"  name="descripcion" placeholder="Descripcion..." value="" id="descripcion">
-      <input style="width: 70px" type="text" name="precio" placeholder="Precio..." value="" id="precio">
-      <input style="width: 70px" type="text" name="cantidad" placeholder="Cantidad..." value="" id="cantidad" onblur="multiplicar_precio_x_cantidad();">
-      <input style="width: 70px" type="text" name="total" placeholder="Total..." value="" id="total">        
-      <div id="agregar_fila_dinamica"></div>
-      
-    </div>
-  </div>
+    <table class="tabla_venta">
+    <tbody id="contenido">
+     <!-- Contenido del buscador -->
+      </tbody>
+      <thead>
+        <tr>
+          <th>Codigo</th>
+          <th>Referencia</th>
+          <th>Descripcion</th>
+          <th>Precio</th>
+          <th>Existencia</th>
+          <th>Marca</th>
+          <th>Cantidad</th>
+          <th>Precio Total</th>
+          <th>Accion</th>
+        </tr>
+        <tr>
+        <?php
+        include('conexion.php');
+        $conn = new conexion_db_carrito(); 
+        $codigo= $_REQUEST['codigo'];                        
+        $consulta_select = "SELECT * FROM productos WHERE codigo='$codigo'"  ;                    
+        $query = mysqli_query($conn->conectarcarrito(),$consulta_select);
+        $row = mysqli_fetch_object($query);
+        {               
+        ?>
+        <form action="proceso_modificar_crud_cartera_productos.php?codigo= <?php echo $row->codigo; ?>" method="POST" enctype="multipart/form-data"></td>
+        <td id="texto_codigo_producto"><input type="text" REQUIRED name="codigo" placeholder="Codigo..." value="<?php echo $row->codigo; ?>"></td>
+        <td id="texto_referencia"><input type="text" REQUIRED name="referencia" placeholder="Referencia..." value="<?php echo $row->referencia; ?>"></td>
+        <td id="texto_descripcion"><input type="text" REQUIRED name="descripcion" placeholder="Descripcion Producto..." value="<?php echo $row->descripcion; ?>"></td>
+        <td id="texto_precio"><input type="text" name="precio" placeholder="Precio..." value="<?php echo $row->precio;?>"></td>
+        <td id="texto_existencia"><input type="text" name="cantidad" placeholder="Cantidad..." value="<?php echo $row->cantidad;?>"></td>
+        <td id="texto_marca"><input type="text" name="marca" placeholder="Marca..." value="<?php echo $row->marca;?>"></td>
+        <td id="texto_cantidad_producto"><input type="text" name="texto_cantidad_producto" placeholder="Marca..." value="<?php echo $row->marca;?>"></td>
+        <td id="precio_total"><input type="text" name="precio_total" placeholder="Marca..." value="<?php echo $row->marca;?>"></td>
+        <td><a href="a" id="add_productos_venta">Agregar</a></td>         
+                
+                <?php
+        }
+                ?>     
+          
+        </tr>
+      </thead>
 
+      <tbody id="detalle_compra">
+      <!-- Contenido Ajax -->
+        <tr>
+          <td>1</td>
+          <td>1254</td>
+          <td>Mouse</td>
+          <td>30</td>
+          <td>10</td>
+          <td>verga</td>
+          <td>2</td>
+          <td>20</td>
+          <td><a class="link_delete" href="a" onclick="event.preventDefault(); eliminar_detalle_producto(1);">Eliminar</td>
+        </tr>
+      </tbody>
+
+      <tfoot id="detalle_totales">
+      <!-- Contenido Ajax -->
+        <tr>
+          <td class="text_right">SubTotal</td>
+          <td class="text_right">200</td>
+        </tr>
+        <tr>
+          <td class="text_right">Iva (12%)</td>
+          <td class="text_right">23.5</td>
+        </tr>
+        <tr>
+          <td class="text_right">Total</td>
+          <td class="text_right">223.5</td>
+        </tr>
+        
+      </tfoot>
+
+
+     
+      <form action="" method="POST" >
+            <label for="campo"  >Buscar: </label>
+            <input type="text" name="campo" id="campo">
+      </form>
+      
+    </table>
     
-    <button id="agregar">Agregar</button>   
-
-
+    <script >
+      getData()
+      document.getElementById("campo").addEventListener("keyup",getData)
+      function getData()
+      {
+          let input= document.getElementById("campo").value
+          console.log(input)
+          let contenido= document.getElementById("contenido")
+          let url = 'load_crud_productos_enventas.php'
+          let formulario = new FormData()
+          formulario.append('campo', input)
+          fetch (url , {
+              method: "POST",
+              body: formulario                        
+              }).then(response => response.json())
+          .then(data => {contenido.innerHTML = data
+          console.log("activa el fetch") })
+          .catch(err => console.log(err))
+      }
+    </script>
   </section>
     <br>
     <a href="administrador.html">Volver</a>
 <br>
 
-<script>
-
- const contenedor=document.querySelector('#agregar_fila_dinamica');
- const btnAgregar= document.querySelector('#agregar');
- let total=0;
-
- btnAgregar.addEventListener('click', e => {
-  //alert(<label>${total++}</label>);
-  
-    let div = document.createElement('div');
-    div.innerHTML = `<label>${total++}</label> - 
-      <input style="width: 70px"  type="text" REQUIRED name="codigo" placeholder="Codigo..." value="" id="codigo${total}" onblur="buscar_datos_tabla_productos();">
-      <input style="width: 400px"type="text"  name="descripcion" placeholder="Descripcion..." value="" id="descripcion${total}">
-      <input style="width: 70px" type="text" name="precio" placeholder="Precio..." value="" id="precio${total}">
-      <input style="width: 70px" type="text" name="cantidad" placeholder="Cantidad..." value="" id="cantidad" onblur="multiplicar_precio_x_cantidad();">
-      <input style="width: 70px" type="text" name="total" placeholder="Total..." value="" id="total"><button onclick="eliminar(this)">Eliminar</button>`;
-    contenedor.appendChild(div);
-    console.log(div);
-})
-
-//@param {this} e 
-
-const eliminar = (e) => {
-    const divPadre = e.parentNode;
-    contenedor.removeChild(divPadre);
-    actualizarContador();
-};
-
-const actualizarContador = () => {
-    let divs = contenedor.children;
-    total = 0;
-    
-    for (let i = 0; i < divs.length; i++) {
-        divs[i].children[0].innerHTML = total++;
-    }//end for
-};
-
-   function buscar_datos_tabla_trabajadores()
-{
-    var parametros = 
-    {
-      "buscar_cedula": "1",
-      "cedula_trabajador" : $("#cedula").val()
-    };
-    $.ajax(
-    {
-      data:  parametros,
-      dataType: 'json',
-      url:   'cargar_crud_ventas_formulario_auto.php',
-      type:  'post',
-      beforeSend: function() 
-      {
-        //alert("enviando");
-      }, 
-      error: function()
-      {
-        //alert("Error");
-      },
-      complete: function() 
-      {
-        //alert("¡Listo!");
-      },
-      success:  function (valores_trabajadores) 
-      {
-        $("#vendedor").val(valores_trabajadores.nombre_trabajador);
-      }
-    }) 
-    
-} 
-
-function buscar_datos_tabla_productos()
-{
-    var parametros = 
-    {
-      "buscar_producto": "1",
-      "codigo" : $("#codigo").val(),
-      "codigo1" : $("#codigo1").val(),
-      "codigo2" : $("#codigo2").val(),
-      "codigo3" : $("#codigo3").val(),
-      "codigo4" : $("#codigo4").val(),
-      "codigo5" : $("#codigo5").val()
-    };
-    $.ajax(
-    {
-      data:  parametros,
-      dataType: 'json',
-      url:   'cargar_crud_ventas_formulario_auto.php',
-      type:  'post',
-      beforeSend: function() 
-      {
-        //alert("enviando");
-        //alert(codigo);
-      }, 
-      error: function()
-      {
-        //alert("Error");
-      },
-      complete: function() 
-      {
-        //alert("¡Listo!");
-      },
-      success:  function (valores_productos) 
-      {
-        $("#descripcion").val(valores_productos.descripcion);
-        $("#referencia").val(valores_productos.referencia);
-        $("#precio").val(valores_productos.precio);
-        $("#descripcion1").val(valores_productos.descripcion1);
-        $("#referencia1").val(valores_productos.referencia1);
-        $("#precio1").val(valores_productos.precio1);
-        $("#descripcion2").val(valores_productos.descripcion2);
-        $("#referencia2").val(valores_productos.referencia2);
-        $("#precio2").val(valores_productos.precio2);
-        $("#descripcion3").val(valores_productos.descripcion3);
-        $("#referencia3").val(valores_productos.referencia3);
-        $("#precio3").val(valores_productos.precio3);
-        $("#descripcion4").val(valores_productos.descripcion4);
-        $("#referencia4").val(valores_productos.referencia4);
-        $("#precio4").val(valores_productos.precio4);
-        $("#descripcion5").val(valores_productos.descripcion5);
-        $("#referencia5").val(valores_productos.referencia5);
-        $("#precio5").val(valores_productos.precio5);
-
-      }
-    }) 
-    console.log($("#codigo").val());
-    console.log($("#codigo1").val());
-    console.log($("#codigo2").val());
-    console.log($("#codigo3").val());
-    console.log($("#codigo4").val());
-    console.log($("#codigo5").val());
-    
-} 
-///////////////////////////////////////////////
-////////////////////////////////////////////////
-
-function multiplicar_precio_x_cantidad()
-{
-    precio= $("#precio").val();
-    cantidad= $("#cantidad").val();
-    total= precio*cantidad;
-    $('#total').val(total);
-}
-
-
-
-</script>
-
 </body>
+
 </html>
