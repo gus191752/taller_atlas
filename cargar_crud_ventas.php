@@ -85,7 +85,10 @@ if ($_SESSION['jerarquia']!='9')
                 <?php
         }
                 ?>     
-          
+         
+         
+    
+        
         </tr>
       </thead>
 
