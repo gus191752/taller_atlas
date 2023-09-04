@@ -4,6 +4,7 @@ if ($_SESSION['jerarquia']!='9')
 {
     header('location:index.php');
 }
+echo md5($_SESSION['cedula_usuario'])
 ?>
 
 <!DOCTYPE html>
