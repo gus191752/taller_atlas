@@ -43,7 +43,17 @@ console.log('dentro evento add_productos_venta');
 
             success: function(response)
             {
-                console.log(response);
+                if (response!= 'error')
+                {
+                
+                var info= JSON.parse(response);
+                
+                $('#detalle_venta').html(info.detalles);
+                $('#detalle_totales').html(info.totales);
+                }
+            else{
+                console.log('no datos');
+            }
             },
             error: function(error)
             {

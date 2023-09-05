@@ -103,7 +103,7 @@ echo md5($_SESSION['cedula_usuario'])
         </tr>
       </thead>
 
-      <tbody id="detalle_compra">
+      <tbody id="detalle_venta">
       <!-- Contenido Ajax -->
         
       </tbody>

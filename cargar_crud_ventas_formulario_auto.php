@@ -14,9 +14,6 @@ if ($_POST['action']=='add_detalle_producto')
 {
     //print_r($_POST);  metodo para visualizar el array que manda el ajax
     //exit;
-    
-    echo($_POST['cantidad']);
-    echo($_POST['codigo_temporal']);
 
     if (empty($_POST['codigo_temporal']) || empty($_POST['cantidad']))
     {
@@ -120,7 +117,7 @@ if (isset($_POST['buscar_cedula']))
     $valores_trabajadores=json_encode($valores_trabajadores);
     echo $valores_trabajadores;
 }
-echo "dentro de php";
+//echo "dentro de php";
 //echo $codigo1;
 //
 
