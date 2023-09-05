@@ -83,8 +83,8 @@ echo md5($_SESSION['cedula_usuario'])
         $row = mysqli_fetch_object($query);
         {               
         ?>
-        <td ><input id="texto_codigo_producto" type="text" REQUIRED name="codigo" placeholder="Codigo..." value="<?php if (($codigo)=='') {} else { echo $row->codigo; }?>"></td>
-        <td ><input id="texto_referencia" type="text" REQUIRED name="referencia" placeholder="Referencia..." value="<?php  { echo $row->referencia; }  ?>"></td>
+        <td ><input id="texto_codigo_producto" type="text" REQUIRED name="codigo" placeholder="Codigo..." value="<?php echo $row->codigo; ?>"></td>
+        <td ><input id="texto_referencia" type="text" REQUIRED name="referencia" placeholder="Referencia..." value="<?php   echo $row->referencia;  ?>"></td>
         <td ><input id="texto_descripcion" type="text" REQUIRED name="descripcion" placeholder="Descripcion Producto..." value="<?php echo $row->descripcion; ?>"></td>
         <td ><input id="texto_precio" type="text" name="text_precio" placeholder="Precio..." value="<?php echo $row->precio;?>"></td>
         <td ><input id="texto_existencia" type="text" name="texto_existencia" placeholder="Cantidad..." value="<?php echo $row->cantidad;?>"></td>
@@ -105,33 +105,12 @@ echo md5($_SESSION['cedula_usuario'])
 
       <tbody id="detalle_compra">
       <!-- Contenido Ajax -->
-        <tr>
-          <td>1</td>
-          <td>1254</td>
-          <td>Mouse</td>
-          <td>30</td>
-          <td>10</td>
-          <td>verga</td>
-          <td>2</td>
-          <td>20</td>
-          <td><a class="link_delete" href="a" onclick="event.preventDefault(); eliminar_detalle_producto(1);">Eliminar</td>
-        </tr>
+        
       </tbody>
 
       <tfoot id="detalle_totales">
       <!-- Contenido Ajax -->
-        <tr>
-          <td class="text_right">SubTotal</td>
-          <td class="text_right">200</td>
-        </tr>
-        <tr>
-          <td class="text_right">Iva (12%)</td>
-          <td class="text_right">23.5</td>
-        </tr>
-        <tr>
-          <td class="text_right">Total</td>
-          <td class="text_right">223.5</td>
-        </tr>
+        
         
       </tfoot>
 
