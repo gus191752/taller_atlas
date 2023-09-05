@@ -22,3 +22,33 @@ $('#texto_cantidad_producto').keyup(function(e){
     }
 
 });
+
+
+// agregar detalle a la factura temporal
+$('#add_productos_venta').click(function(e){
+    e.preventDefault();
+
+    if ($('#texto_cantidad_producto').val()>0)
+    {
+        var codigo_temporal= $('#texto_codigo_producto').val();
+        var cantidad = $('#texto_cantidad_producto').val();
+        var action = 'add_detalle_producto';
+console.log('dentro evento add_productos_venta');
+        $.ajax
+        ({
+            url:'cargar_crud_ventas_formulario_auto.php',
+            type: "POST",
+            async: true,
+            data:{action:action,codigo_temporal:codigo_temporal,cantidad:cantidad },
+
+            success: function(response)
+            {
+                console.log(response);
+            },
+            error: function(error)
+            {
+
+            } 
+        })
+    }
+});
