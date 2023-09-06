@@ -33,7 +33,6 @@ $('#add_productos_venta').click(function(e){
         var codigo_temporal= $('#texto_codigo_producto').val();
         var cantidad = $('#texto_cantidad_producto').val();
         var action = 'add_detalle_producto';
-console.log('dentro evento add_productos_venta');
         $.ajax
         ({
             url:'cargar_crud_ventas_formulario_auto.php',
@@ -50,6 +49,23 @@ console.log('dentro evento add_productos_venta');
                 
                 $('#detalle_venta').html(info.detalles);
                 $('#detalle_totales').html(info.totales);
+
+                $('#texto_codigo_producto').val('');
+                $('#texto_referencia').val('');
+                $('#texto_descripcion').html('');
+                $('#texto_precio').val('');
+                $('#texto_existencia').val('');
+                $('#texto_marca').val('');
+                $('#texto_cantidad_producto').val('0');
+                $('#texto_precio_total').val('0');
+
+                    //bloquea casilla cantidad
+                $('#texto_cantidad_producto').attr('disabled','disabled');
+                    //oculta boton agregar
+                $('#add_productos_venta').slideUp();
+                
+                $campo='';
+
                 }
             else{
                 console.log('no datos');

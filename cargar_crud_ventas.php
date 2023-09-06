@@ -68,15 +68,13 @@ echo md5($_SESSION['cedula_usuario'])
             <label for="campo"  >Buscar: </label>
             <input type="text" name="campo" id="campo">
       </form>
-        <?php
 
-        
+        <?php
 
         include('conexion.php');
         $conn = new conexion_db_carrito(); 
         //$codigo= $_REQUEST['codigo']; 
         $codigo = isset($_REQUEST['codigo']) ? $_REQUEST['codigo'] : $codigo= "" ;
-        //$referencia = isset($_REQUEST['referencia']) ? $_REQUEST['referencia'] : $referencia= "" ;
         
         $consulta_select = "SELECT * FROM productos WHERE codigo='$codigo'"  ;                    
         $query = mysqli_query($conn->conectarcarrito(),$consulta_select);
