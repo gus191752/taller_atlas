@@ -107,7 +107,7 @@ if (empty($_SESSION['cedula_usuario']))
         </div>
     </div>   
 
-    <h2 align="center">Trabajamos con las marcas!!!</h2>
+    <h2 align="center">Trabajamos con las marcas!!!.</h2>
 
     <div class="slider-frame">
         <ul>
