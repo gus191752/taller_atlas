@@ -137,7 +137,7 @@ if (empty($_SESSION['cedula_usuario']))
         <h4>Soluciones gm 83 c.a.</h4>
         <h4>Rif J-50411101-5</h4>
         <h4>Centro Comercial La Romana local B4, av Miranda c/c av ayacucho, Maracay</h4>
-        <h4>tlf: 0412-147.19.97</h4>
+        <h4>tlf: 0412-147.19.97 - 0412.324.08.46</h4>
         <h4>Correo: talleratlasmcy@gmail.com</h4>
         <h4>Instagram: @talleratlasmcy</h4>
     </footer>
